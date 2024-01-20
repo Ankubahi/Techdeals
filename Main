@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- feeds & pingback -->
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://techdeals.in/xmlrpc.php" />
+
+<!-- Search Engine Optimization by Rank Math PRO - https://rankmath.com/ -->
+<title>Techdeals | All In One Price Comparison and Review Website</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A300%2C500%2C400%2C700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A300%2C500%2C400%2C700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A300%2C500%2C400%2C700&#038;display=swap" /></noscript><link rel="stylesheet" href="https://cdn.shortpixel.ai/spai/q_lossy+ret_auto+to_webp+v_17/techdeals.in/wp-content/cache/min/1/fcf8ea436ac2da0f7ca71408db7187c5.css" data-spai-egr="1" media="all" data-minify="1" />
+<meta name="description" content="Techdeals Tracking Prices from more than 5 Most Popular Websites to Give you Best Deals. Best Price Comparison Website for Your PC Build"/>
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="https://techdeals.in/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Techdeals | All In One Price Comparison and Review Website" />
+<meta property="og:description" content="Techdeals Tracking Prices from more than 5 Most Popular Websites to Give you Best Deals. Best Price Comparison Website for Your PC Build" />
+<meta property="og:url" content="https://techdeals.in/" />
+<meta property="og:site_name" content="Techdeals" />
+<meta property="og:updated_time" content="2023-11-03T15:05:19+05:30" />
+<meta property="og:image" content="https://techdeals.in/wp-content/uploads/2020/03/share.jpg" />
+<meta property="og:image:secure_url" content="https://techdeals.in/wp-content/uploads/2020/03/share.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="techdeals" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Techdeals | All In One Price Comparison and Review Website" />
+<meta name="twitter:description" content="Techdeals Tracking Prices from more than 5 Most Popular Websites to Give you Best Deals. Best Price Comparison Website for Your PC Build" />
+<meta name="twitter:image" content="https://techdeals.in/wp-content/uploads/2020/03/share.jpg" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Lucifer" />
+<meta name="twitter:label2" content="Time to read" />
+<meta name="twitter:data2" content="3 minutes" />
+<script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://techdeals.in/#organization","name":"Techdeals","url":"https://techdeals.in","email":"techdeals.in@gmail.com","logo":{"@type":"ImageObject","@id":"https://techdeals.in/#logo","url":"http://techdeals.in/wp-content/uploads/2019/12/Techdeals-4-e1576043610673.png","contentUrl":"http://techdeals.in/wp-content/uploads/2019/12/Techdeals-4-e1576043610673.png","caption":"Techdeals","inLanguage":"en-US","width":"140","height":"140"}},{"@type":"WebSite","@id":"https://techdeals.in/#website","url":"https://techdeals.in","name":"Techdeals","publisher":{"@id":"https://techdeals.in/#organization"},"inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":"https://techdeals.in/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"http://techdeals.in/wp-content/uploads/thumbs_dir/64a0f7hmprbz-e1576043575465-1w1zx41gvg5xrbvy1riit8_366896c48fd99a8b8bce1bbecb9e3c99-1wtxlgji0am2agkcprx6a2zwjubd31717rl5ciz4cd9g.png","url":"http://techdeals.in/wp-content/uploads/thumbs_dir/64a0f7hmprbz-e1576043575465-1w1zx41gvg5xrbvy1riit8_366896c48fd99a8b8bce1bbecb9e3c99-1wtxlgji0am2agkcprx6a2zwjubd31717rl5ciz4cd9g.png","width":"200","height":"200","inLanguage":"en-US"},{"@type":"ItemPage","@id":"https://techdeals.in/#webpage","url":"https://techdeals.in/","name":"Techdeals | All In One Price Comparison and Review Website","datePublished":"2019-07-09T23:10:04+05:30","dateModified":"2023-11-03T15:05:19+05:30","about":{"@id":"https://techdeals.in/#organization"},"isPartOf":{"@id":"https://techdeals.in/#website"},"primaryImageOfPage":{"@id":"http://techdeals.in/wp-content/uploads/thumbs_dir/64a0f7hmprbz-e1576043575465-1w1zx41gvg5xrbvy1riit8_366896c48fd99a8b8bce1bbecb9e3c99-1wtxlgji0am2agkcprx6a2zwjubd31717rl5ciz4cd9g.png"},"inLanguage":"en-US"},{"@type":"Product","name":"Techdeals | All In One Price Comparison and Review Website","description":"Techdeals Tracking Prices from more than 5 Most Popular Websites to Give you Best Deals. Best Price Comparison Website for Your PC Build","offers":{"@type":"Offer","price":"0","url":"https://techdeals.in/","availability":"https://schema.org/OutOfStock"},"@id":"https://techdeals.in/#schema-56586","image":{"@id":"http://techdeals.in/wp-content/uploads/thumbs_dir/64a0f7hmprbz-e1576043575465-1w1zx41gvg5xrbvy1riit8_366896c48fd99a8b8bce1bbecb9e3c99-1wtxlgji0am2agkcprx6a2zwjubd31717rl5ciz4cd9g.png"},"mainEntityOfPage":{"@id":"https://techdeals.in/#webpage"}}]}</script>
+<meta name="google-site-verification" content="yiKd0fxPLDL0lZYebFuw_vd0CL-O08ph-vn9JrPYFVw" />
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Techdeals &raquo; Feed" href="https://techdeals.in/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Techdeals &raquo; Comments Feed" href="https://techdeals.in/comments/feed/" />
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+
+<style id='rank-math-toc-block-style-inline-css' type='text/css'>
+.wp-block-rank-math-toc-block nav ol{counter-reset:item}.wp-block-rank-math-toc-block nav ol li{display:block}.wp-block-rank-math-toc-block nav ol li:before{content:counters(item, ".") " ";counter-increment:item}
+
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--main: var(--rehub-main-color);--wp--preset--color--secondary: var(--rehub-sec-color);--wp--preset--color--buttonmain: var(--rehub-main-btn-bg);--wp--preset--color--cyan-grey: #abb8c3;--wp--preset--color--orange-light: #fcb900;--wp--preset--color--red: #cf2e2e;--wp--preset--color--red-bright: #f04057;--wp--preset--color--vivid-green: #00d084;--wp--preset--color--orange: #ff6900;--wp--preset--color--blue: #0693e3;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-family--system-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;--wp--preset--font-family--rh-nav-font: var(--rehub-nav-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif);--wp--preset--font-family--rh-head-font: var(--rehub-head-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif);--wp--preset--font-family--rh-btn-font: var(--rehub-btn-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif);--wp--preset--font-family--rh-body-font: var(--rehub-body-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif);--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}body { margin: 0;--wp--style--global--content-size: 760px;--wp--style--global--wide-size: 900px; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){color: var(--rehub-link-color, violet);text-decoration: none;}h1{font-size: 29px;line-height: 34px;margin-top: 10px;margin-bottom: 31px;}h2{font-size: 25px;line-height: 31px;margin-top: 10px;margin-bottom: 31px;}h3{font-size: 20px;line-height: 28px;margin-top: 10px;margin-bottom: 25px;}h4{font-size: 18px;line-height: 24px;margin-top: 10px;margin-bottom: 18px;}h5{font-size: 16px;line-height: 20px;margin-top: 10px;margin-bottom: 15px;}h6{font-size: 14px;line-height: 20px;margin-top: 0px;margin-bottom: 10px;}.wp-element-button, .wp-block-button__link{background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-main-color{color: var(--wp--preset--color--main) !important;}.has-secondary-color{color: var(--wp--preset--color--secondary) !important;}.has-buttonmain-color{color: var(--wp--preset--color--buttonmain) !important;}.has-cyan-grey-color{color: var(--wp--preset--color--cyan-grey) !important;}.has-orange-light-color{color: var(--wp--preset--color--orange-light) !important;}.has-red-color{color: var(--wp--preset--color--red) !important;}.has-red-bright-color{color: var(--wp--preset--color--red-bright) !important;}.has-vivid-green-color{color: var(--wp--preset--color--vivid-green) !important;}.has-orange-color{color: var(--wp--preset--color--orange) !important;}.has-blue-color{color: var(--wp--preset--color--blue) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-main-background-color{background-color: var(--wp--preset--color--main) !important;}.has-secondary-background-color{background-color: var(--wp--preset--color--secondary) !important;}.has-buttonmain-background-color{background-color: var(--wp--preset--color--buttonmain) !important;}.has-cyan-grey-background-color{background-color: var(--wp--preset--color--cyan-grey) !important;}.has-orange-light-background-color{background-color: var(--wp--preset--color--orange-light) !important;}.has-red-background-color{background-color: var(--wp--preset--color--red) !important;}.has-red-bright-background-color{background-color: var(--wp--preset--color--red-bright) !important;}.has-vivid-green-background-color{background-color: var(--wp--preset--color--vivid-green) !important;}.has-orange-background-color{background-color: var(--wp--preset--color--orange) !important;}.has-blue-background-color{background-color: var(--wp--preset--color--blue) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-main-border-color{border-color: var(--wp--preset--color--main) !important;}.has-secondary-border-color{border-color: var(--wp--preset--color--secondary) !important;}.has-buttonmain-border-color{border-color: var(--wp--preset--color--buttonmain) !important;}.has-cyan-grey-border-color{border-color: var(--wp--preset--color--cyan-grey) !important;}.has-orange-light-border-color{border-color: var(--wp--preset--color--orange-light) !important;}.has-red-border-color{border-color: var(--wp--preset--color--red) !important;}.has-red-bright-border-color{border-color: var(--wp--preset--color--red-bright) !important;}.has-vivid-green-border-color{border-color: var(--wp--preset--color--vivid-green) !important;}.has-orange-border-color{border-color: var(--wp--preset--color--orange) !important;}.has-blue-border-color{border-color: var(--wp--preset--color--blue) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-system-font-font-family{font-family: var(--wp--preset--font-family--system-font) !important;}.has-rh-nav-font-font-family{font-family: var(--wp--preset--font-family--rh-nav-font) !important;}.has-rh-head-font-font-family{font-family: var(--wp--preset--font-family--rh-head-font) !important;}.has-rh-btn-font-font-family{font-family: var(--wp--preset--font-family--rh-btn-font) !important;}.has-rh-body-font-font-family{font-family: var(--wp--preset--font-family--rh-body-font) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+.wp-block-post-title{margin-top: 4px;margin-right: 0;margin-bottom: 15px;margin-left: 0;}
+.wp-block-image{margin-top: 0px;margin-bottom: 31px;}
+.wp-block-media-text{margin-top: 0px;margin-bottom: 31px;}
+.wp-block-post-content{font-size: 16px;line-height: 28px;}
+</style>
+
+<style id='spai-fadein-inline-css' type='text/css'>
+img[data-spai]{opacity: 0;} div.woocommerce-product-gallery img[data-spai]{opacity: 1;} img[data-spai-egr],img[data-spai-lazy-loaded],img[data-spai-upd] {transition: opacity .5s linear .2s;-webkit-transition: opacity .5s linear .2s;-moz-transition: opacity .5s linear .2s;-o-transition: opacity .5s linear .2s; opacity: 1;}
+</style>
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+
+
+
+
+<link rel='stylesheet' id='elementor-post-2702-css' href='https://cdn.shortpixel.ai/spai/q_lossy+ret_auto+to_webp+v_17/techdeals.in/wp-content/uploads/elementor/css/post-2702.css?ver=1698925499' data-spai-egr='1' type='text/css' media='all' />
+
+<link rel='stylesheet' id='elementor-post-1016-css' href='https://cdn.shortpixel.ai/spai/q_lossy+ret_auto+to_webp+v_17/techdeals.in/wp-content/uploads/elementor/css/post-1016.css?ver=1698925499' data-spai-egr='1' type='text/css' media='all' />
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><script type="text/javascript" src="https://techdeals.in/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://techdeals.in/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="cegg-price-alert-js-extra">
+/* <![CDATA[ */
+var ceggPriceAlert = {"ajaxurl":"https:\/\/techdeals.in\/wp-admin\/admin-ajax.php","nonce":"ca2ec34301"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://techdeals.in/wp-content/cache/min/1/wp-content/plugins/content-egg/res/js/price_alert.js?ver=1696473808" id="cegg-price-alert-js" defer></script>
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=GT-PL9FJ52" id="google_gtagjs-js" async></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["techdeals.in"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-PL9FJ52");
+/* ]]> */
+</script>
+
+<!-- End Google Analytics snippet added by Site Kit -->
+<link rel="https://api.w.org/" href="https://techdeals.in/wp-json/" /><link rel="alternate" type="application/json" href="https://techdeals.in/wp-json/wp/v2/pages/1016" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://techdeals.in/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.4.2" />
+<link rel='shortlink' href='https://techdeals.in/' />
+<link rel="alternate" type="application/json+oembed" href="https://techdeals.in/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftechdeals.in%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://techdeals.in/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftechdeals.in%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.118.0" /><link rel="preload" href="https://cdn.shortpixel.ai/spai/ret_img/techdeals.in/wp-content/themes/rehub-theme/fonts/rhicons.woff2?3oibrk" data-spai-egr="1" as="font" type="font/woff2" crossorigin="crossorigin"><style type="text/css"> .rh-boxed-container .rh-outer-wrap{width:100% !important;overflow:hidden;background:transparent;box-shadow:none}nav.top_menu > ul > li > a{text-transform:uppercase;}header .main-nav,.main-nav.dark_style,.header_one_row .main-nav{background:none repeat scroll 0 0 #000000!important;box-shadow:none;}.main-nav{border-bottom:none;border-top:none;}.dl-menuwrapper .dl-menu{margin:0 !important} .widget .title:after{border-bottom:2px solid #ff823a;}.rehub-main-color-border,nav.top_menu > ul > li.vertical-menu.border-main-color .sub-menu,.rh-main-bg-hover:hover,.wp-block-quote,ul.def_btn_link_tabs li.active a,.wp-block-pullquote{border-color:#ff823a;}.wpsm_promobox.rehub_promobox{border-left-color:#ff823a!important;}.color_link{color:#ff823a !important;}.featured_slider:hover .score,.top_chart_controls .controls:hover,article.post .wpsm_toplist_heading:before{border-color:#ff823a;}.btn_more:hover,.tw-pagination .current{border:1px solid #ff823a;color:#fff}.rehub_woo_review .rehub_woo_tabs_menu li.current{border-top:3px solid #ff823a;}.gallery-pics .gp-overlay{box-shadow:0 0 0 4px #ff823a inset;}.post .rehub_woo_tabs_menu li.current,.woocommerce div.product .woocommerce-tabs ul.tabs li.active{border-top:2px solid #ff823a;}.rething_item a.cat{border-bottom-color:#ff823a}nav.top_menu ul li ul.sub-menu{border-bottom:2px solid #ff823a;}.widget.deal_daywoo,.elementor-widget-wpsm_woofeatured .deal_daywoo{border:3px solid #ff823a;padding:20px;background:#fff;}.deal_daywoo .wpsm-bar-bar{background-color:#ff823a !important} #buddypress div.item-list-tabs ul li.selected a span,#buddypress div.item-list-tabs ul li.current a span,#buddypress div.item-list-tabs ul li a span,.user-profile-div .user-menu-tab > li.active > a,.user-profile-div .user-menu-tab > li.active > a:focus,.user-profile-div .user-menu-tab > li.active > a:hover,.news_in_thumb:hover a.rh-label-string,.news_out_thumb:hover a.rh-label-string,.col-feat-grid:hover a.rh-label-string,.carousel-style-deal .re_carousel .controls,.re_carousel .controls:hover,.openedprevnext .postNavigation .postnavprev,.postNavigation .postnavprev:hover,.top_chart_pagination a.selected,.flex-control-paging li a.flex-active,.flex-control-paging li a:hover,.btn_more:hover,body .tabs-menu li:hover,body .tabs-menu li.current,.featured_slider:hover .score,#bbp_user_edit_submit,.bbp-topic-pagination a,.bbp-topic-pagination a,.custom-checkbox label.checked:after,.slider_post .caption,ul.postpagination li.active a,ul.postpagination li:hover a,ul.postpagination li a:focus,.top_theme h5 strong,.re_carousel .text:after,#topcontrol:hover,.main_slider .flex-overlay:hover a.read-more,.rehub_chimp #mc_embed_signup input#mc-embedded-subscribe,#rank_1.rank_count,#toplistmenu > ul li:before,.rehub_chimp:before,.wpsm-members > strong:first-child,.r_catbox_btn,.wpcf7 .wpcf7-submit,.wpsm_pretty_hover li:hover,.wpsm_pretty_hover li.current,.rehub-main-color-bg,.togglegreedybtn:after,.rh-bg-hover-color:hover a.rh-label-string,.rh-main-bg-hover:hover,.rh_wrapper_video_playlist .rh_video_currently_playing,.rh_wrapper_video_playlist .rh_video_currently_playing.rh_click_video:hover,.rtmedia-list-item .rtmedia-album-media-count,.tw-pagination .current,.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li.active,.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li:hover,.dokan-dashboard .dokan-dash-sidebar ul.dokan-dashboard-menu li.dokan-common-links a:hover,#ywqa-submit-question,.woocommerce .widget_price_filter .ui-slider .ui-slider-range,.rh-hov-bor-line > a:after,nav.top_menu > ul:not(.off-canvas) > li > a:after,.rh-border-line:after,.wpsm-table.wpsm-table-main-color table tr th,.rh-hov-bg-main-slide:before,.rh-hov-bg-main-slidecol .col_item:before,.mvx-tablink.active::before{background:#ff823a;}@media (max-width:767px){.postNavigation .postnavprev{background:#ff823a;}}.rh-main-bg-hover:hover,.rh-main-bg-hover:hover .whitehovered,.user-profile-div .user-menu-tab > li.active > a{color:#fff !important} a,.carousel-style-deal .deal-item .priced_block .price_count ins,nav.top_menu ul li.menu-item-has-children ul li.menu-item-has-children > a:before,.top_chart_controls .controls:hover,.flexslider .fa-pulse,.footer-bottom .widget .f_menu li a:hover,.comment_form h3 a,.bbp-body li.bbp-forum-info > a:hover,.bbp-body li.bbp-topic-title > a:hover,#subscription-toggle a:before,#favorite-toggle a:before,.aff_offer_links .aff_name a,.rh-deal-price,.commentlist .comment-content small a,.related_articles .title_cat_related a,article em.emph,.campare_table table.one td strong.red,.sidebar .tabs-item .detail p a,.footer-bottom .widget .title span,footer p a,.welcome-frase strong,article.post .wpsm_toplist_heading:before,.post a.color_link,.categoriesbox:hover h3 a:after,.bbp-body li.bbp-forum-info > a,.bbp-body li.bbp-topic-title > a,.widget .title i,.woocommerce-MyAccount-navigation ul li.is-active a,.category-vendormenu li.current a,.deal_daywoo .title,.rehub-main-color,.wpsm_pretty_colored ul li.current a,.wpsm_pretty_colored ul li.current,.rh-heading-hover-color:hover h2 a,.rh-heading-hover-color:hover h3 a,.rh-heading-hover-color:hover h4 a,.rh-heading-hover-color:hover h5 a,.rh-heading-hover-color:hover h3,.rh-heading-hover-color:hover h2,.rh-heading-hover-color:hover h4,.rh-heading-hover-color:hover h5,.rh-heading-hover-color:hover .rh-heading-hover-item a,.rh-heading-icon:before,.widget_layered_nav ul li.chosen a:before,.wp-block-quote.is-style-large p,ul.page-numbers li span.current,ul.page-numbers li a:hover,ul.page-numbers li.active a,.page-link > span:not(.page-link-title),blockquote:not(.wp-block-quote) p,span.re_filtersort_btn:hover,span.active.re_filtersort_btn,.deal_daywoo .price,div.sortingloading:after{color:#ff823a;} .page-link > span:not(.page-link-title),.widget.widget_affegg_widget .title,.widget.top_offers .title,.widget.cegg_widget_products .title,header .header_first_style .search form.search-form [type="submit"],header .header_eight_style .search form.search-form [type="submit"],.filter_home_pick span.active,.filter_home_pick span:hover,.filter_product_pick span.active,.filter_product_pick span:hover,.rh_tab_links a.active,.rh_tab_links a:hover,.wcv-navigation ul.menu li.active,.wcv-navigation ul.menu li:hover a,form.search-form [type="submit"],.rehub-sec-color-bg,input#ywqa-submit-question,input#ywqa-send-answer,.woocommerce button.button.alt,.tabsajax span.active.re_filtersort_btn,.wpsm-table.wpsm-table-sec-color table tr th,.rh-slider-arrow,.rh-hov-bg-sec-slide:before,.rh-hov-bg-sec-slidecol .col_item:before{background:#000000 !important;color:#fff !important;outline:0}.widget.widget_affegg_widget .title:after,.widget.top_offers .title:after,.widget.cegg_widget_products .title:after{border-top-color:#000000 !important;}.page-link > span:not(.page-link-title){border:1px solid #000000;}.page-link > span:not(.page-link-title),.header_first_style .search form.search-form [type="submit"] i{color:#fff !important;}.rh_tab_links a.active,.rh_tab_links a:hover,.rehub-sec-color-border,nav.top_menu > ul > li.vertical-menu.border-sec-color > .sub-menu,body .rh-slider-thumbs-item--active{border-color:#000000}.rh_wrapper_video_playlist .rh_video_currently_playing,.rh_wrapper_video_playlist .rh_video_currently_playing.rh_click_video:hover{background-color:#000000;box-shadow:1200px 0 0 #000000 inset;}.rehub-sec-color{color:#000000}  .woocommerce .woo-button-area .masked_coupon,.woocommerce a.woo_loop_btn,.woocommerce .button.checkout,.woocommerce input.button.alt,.woocommerce a.add_to_cart_button:not(.flat-woo-btn),.woocommerce-page a.add_to_cart_button:not(.flat-woo-btn),.woocommerce .single_add_to_cart_button,.woocommerce div.product form.cart .button,.woocommerce .checkout-button.button,.priced_block .btn_offer_block,.priced_block .button,.rh-deal-compact-btn,input.mdf_button,#buddypress input[type="submit"],#buddypress input[type="button"],#buddypress input[type="reset"],#buddypress button.submit,.wpsm-button.rehub_main_btn,.wcv-grid a.button,input.gmw-submit,#ws-plugin--s2member-profile-submit,#rtmedia_create_new_album,input[type="submit"].dokan-btn-theme,a.dokan-btn-theme,.dokan-btn-theme,#wcfm_membership_container a.wcfm_submit_button,.woocommerce button.button,.rehub-main-btn-bg,.woocommerce #payment #place_order,.wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link{background:none #43c801 !important;color:#ffffff !important;fill:#ffffff !important;border:none !important;text-decoration:none !important;outline:0;box-shadow:-1px 6px 19px rgba(67,200,1,0.2) !important;border-radius:0 !important;}.rehub-main-btn-bg > a{color:#ffffff !important;}.woocommerce a.woo_loop_btn:hover,.woocommerce .button.checkout:hover,.woocommerce input.button.alt:hover,.woocommerce a.add_to_cart_button:not(.flat-woo-btn):hover,.woocommerce-page a.add_to_cart_button:not(.flat-woo-btn):hover,.woocommerce a.single_add_to_cart_button:hover,.woocommerce-page a.single_add_to_cart_button:hover,.woocommerce div.product form.cart .button:hover,.woocommerce-page div.product form.cart .button:hover,.woocommerce .checkout-button.button:hover,.priced_block .btn_offer_block:hover,.wpsm-button.rehub_main_btn:hover,#buddypress input[type="submit"]:hover,#buddypress input[type="button"]:hover,#buddypress input[type="reset"]:hover,#buddypress button.submit:hover,.small_post .btn:hover,.ap-pro-form-field-wrapper input[type="submit"]:hover,.wcv-grid a.button:hover,#ws-plugin--s2member-profile-submit:hover,.rething_button .btn_more:hover,#wcfm_membership_container a.wcfm_submit_button:hover,.woocommerce #payment #place_order:hover,.woocommerce button.button:hover,.rehub-main-btn-bg:hover,.rehub-main-btn-bg:hover > a,.wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:hover{background:none #43c801 !important;color:#ffffff !important;border-color:transparent;box-shadow:-1px 6px 13px #d3d3d3 !important;}.rehub_offer_coupon:hover{border:1px dashed #43c801;}.rehub_offer_coupon:hover i.far,.rehub_offer_coupon:hover i.fal,.rehub_offer_coupon:hover i.fas{color:#43c801}.re_thing_btn .rehub_offer_coupon.not_masked_coupon:hover{color:#43c801 !important}.woocommerce a.woo_loop_btn:active,.woocommerce .button.checkout:active,.woocommerce .button.alt:active,.woocommerce a.add_to_cart_button:not(.flat-woo-btn):active,.woocommerce-page a.add_to_cart_button:not(.flat-woo-btn):active,.woocommerce a.single_add_to_cart_button:active,.woocommerce-page a.single_add_to_cart_button:active,.woocommerce div.product form.cart .button:active,.woocommerce-page div.product form.cart .button:active,.woocommerce .checkout-button.button:active,.wpsm-button.rehub_main_btn:active,#buddypress input[type="submit"]:active,#buddypress input[type="button"]:active,#buddypress input[type="reset"]:active,#buddypress button.submit:active,.ap-pro-form-field-wrapper input[type="submit"]:active,.wcv-grid a.button:active,#ws-plugin--s2member-profile-submit:active,.woocommerce #payment #place_order:active,input[type="submit"].dokan-btn-theme:active,a.dokan-btn-theme:active,.dokan-btn-theme:active,.woocommerce button.button:active,.rehub-main-btn-bg:active,.wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:active{background:none #43c801 !important;box-shadow:0 1px 0 #999 !important;top:2px;color:#ffffff !important;}.rehub_btn_color,.rehub_chimp_flat #mc_embed_signup input#mc-embedded-subscribe{background-color:#43c801;border:1px solid #43c801;color:#ffffff;text-shadow:none}.rehub_btn_color:hover{color:#ffffff;background-color:#43c801;border:1px solid #43c801;}.rething_button .btn_more{border:1px solid #43c801;color:#43c801;}.rething_button .priced_block.block_btnblock .price_count{color:#43c801;font-weight:normal;}.widget_merchant_list .buttons_col{background-color:#43c801 !important;}.widget_merchant_list .buttons_col a{color:#ffffff !important;}.rehub-svg-btn-fill svg{fill:#43c801;}.rehub-svg-btn-stroke svg{stroke:#43c801;}@media (max-width:767px){#float-panel-woo-area{border-top:1px solid #43c801}}:root{--rehub-main-color:#ff823a;--rehub-sec-color:#000000;--rehub-main-btn-bg:#43c801;--rehub-link-color:#ff823a;}</style><style>#neg_comment, #pos_comment{display:none}</style>	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	
+<!-- Google AdSense snippet added by Site Kit -->
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+<!-- End Google AdSense snippet added by Site Kit -->
+<meta name="generator" content="Elementor 3.16.5; features: e_dom_optimization, e_optimized_assets_loading, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<!-- Google AdSense snippet added by Site Kit -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" async="async" data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7535012204463373&amp;host=ca-host-pub-2644536267352236" crossorigin="anonymous"></script>
+
+<!-- End Google AdSense snippet added by Site Kit -->
+<meta name="generator" content="Powered by Slider Revolution 6.6.15 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<link rel="icon" href="https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_webp/techdeals.in/wp-content/uploads/2019/12/Techdeals-4-100x100.png" data-spai-egr="1" sizes="32x32" />
+<link rel="icon" href="https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_webp/techdeals.in/wp-content/uploads/2019/12/Techdeals-4-300x300.png" data-spai-egr="1" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_webp/techdeals.in/wp-content/uploads/2019/12/Techdeals-4-300x300.png" data-spai-egr="1" />
+<meta name="msapplication-TileImage" content="https://techdeals.in/wp-content/uploads/2019/12/Techdeals-4-300x300.png" />
+<script type="rocketlazyloadscript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+				try {
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+					if(e.layout==="fullscreen" || e.l==="fullscreen")
+						newh = Math.max(e.mh,window.RSIH);
+					else{
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,
+							sl;
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}
+			//});
+		  };</script>
+		<style type="text/css" id="wp-custom-css">
+/** Start Envato Elements CSS: Blocks (72-3-34d2cc762876498c8f6be5405a48e6e2) **/
+
+.envato-block__preview{overflow: visible;}
+
+/*Kit 69 Custom Styling for buttons */
+.envato-kit-69-slide-btn .elementor-button,
+.envato-kit-69-cta-btn .elementor-button,
+.envato-kit-69-flip-btn .elementor-button{
+	border-left: 0px !important;
+	border-bottom: 0px !important;
+	border-right: 0px !important;
+	padding: 15px 0 0 !important;
+}
+.envato-kit-69-slide-btn .elementor-slide-button:hover,
+.envato-kit-69-cta-btn .elementor-button:hover,
+.envato-kit-69-flip-btn .elementor-button:hover{
+	margin-bottom: 20px;
+}
+.envato-kit-69-menu .elementor-nav-menu--main a:hover{
+	margin-top: -7px;
+	padding-top: 4px;
+	border-bottom: 1px solid #FFF;
+}
+/* Fix menu dropdown width */
+.envato-kit-69-menu .elementor-nav-menu--dropdown{
+	width: 100% !important;
+}
+
+/** End Envato Elements CSS: Blocks (72-3-34d2cc762876498c8f6be5405a48e6e2) **/
+
+
+
+/** Start Envato Elements CSS: Electronic Product (37-3-10b62cf94fa2407a78b5db3dc2b8b96c) **/
+
+/* Custom Image Gallery */
+.envato-kit-34-gallery .elementor-image-gallery .gallery-item{
+	position:relative;
+	max-height: 400px;
+	overflow: hidden;
+	margin-bottom: 40px !important;
+}
+
+.envato-kit-34-gallery .elementor-image-gallery .gallery-item .gallery-caption{
+	position:absolute;
+	left:0;
+	z-index:2;
+  bottom: 30px;
+	opacity:0;
+	transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  /* Firefox 4 */
+  -webkit-transition: all 0.2s;
+  /* Safari and Chrome */
+  -o-transition: all 0.2s;
+}
+.envato-kit-34-gallery .elementor-image-gallery .gallery-item .gallery-caption em{
+	 display:block;
+	 margin-top:8px;
+	 opacity:.8;
+	 font-size:80%;
+}
+
+.envato-kit-34-gallery .elementor-image-gallery .gallery-item img{
+	transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  /* Firefox 4 */
+  -webkit-transition: all 0.2s;
+  /* Safari and Chrome */
+  -o-transition: all 0.2s;
+}
+
+.envato-kit-34-gallery .elementor-image-gallery .gallery-item:hover img{
+	opacity:.5;
+}
+
+.envato-kit-34-gallery .elementor-image-gallery .gallery-item:hover .gallery-caption{
+	bottom:80px;
+	opacity:1;
+}
+
+/* Hover Block */
+.hover_block {
+	 border:1px solid #ededed;
+	 border-radius:5px;
+	 padding:30px 10px;
+	 transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  /* Firefox 4 */
+  -webkit-transition: all 0.2s;
+  /* Safari and Chrome */
+  -o-transition: all 0.2s
+}
+.hover_block:hover{
+	 box-shadow: 0 0 30px rgba(0,0,0,.1);
+}
+
+.elementor-widget-container hr{
+	  border: 1px solid #eee;
+    border-width: 1px 0 0;
+    margin: 3em 0;
+}
+
+/*Newsletter*/
+.envato-kit-34-newsletter{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+.envato-kit-34-newsletter input[type="email"],
+.envato-kit-34-newsletter button{
+	height:40px;
+	padding:0px 15px;
+	border:1px solid #ddd;
+}
+.envato-kit-34-newsletter input[type="email"]{
+	width:500px;
+}
+@media(max-width:767px){
+	.envato-kit-34-newsletter input[type="email"]{
+	width:200px;
+   }
+}
+.envato-kit-34-newsletter button{
+	background:#4054b2;
+	border-color:#4054b2;
+	color:#fff;
+
+	font-weight:bold;
+	text-transform:uppercase;
+}
+
+/* Hover Background */
+.hover_background:hover{
+	border-color:#4054b2 !important;
+}
+
+/** End Envato Elements CSS: Electronic Product (37-3-10b62cf94fa2407a78b5db3dc2b8b96c) **/
+
+
+
+/** Start Envato Elements CSS: Internet Company (196-3-c34cf4e6e385d14c4ccda531967d17a2) **/
+
+/* Envato Custom css - applied to the advanced tab of the element it affects */
+.envato-kit-200-progress .elementor-progress-wrapper,
+.envato-kit-200-progress .elementor-progress-bar{
+	border-radius: 30px;
+}
+
+/** End Envato Elements CSS: Internet Company (196-3-c34cf4e6e385d14c4ccda531967d17a2) **/
+
+
+
+/** Start Envato Elements CSS: Digital Product (131-3-ee56ed76a1a2c69f83e82ef38219296a) **/
+
+.envato-kit-128-grad-border .elementor-button-wrapper{
+	display: inline-block;
+  background: linear-gradient(to left, #e11da3, #3b68ff);
+	border-radius: 50px;
+  padding: 2px;
+}
+
+
+
+/** End Envato Elements CSS: Digital Product (131-3-ee56ed76a1a2c69f83e82ef38219296a) **/
+
+
+
+/** Start Envato Elements CSS: Blocks (69-3-4f8cfb8a1a68ec007f2be7a02bdeadd9) **/
+
+.envato-kit-66-menu .e--pointer-framed .elementor-item:before{
+	border-radius:1px;
+}
+
+.envato-kit-66-subscription-form .elementor-form-fields-wrapper{
+	position:relative;
+}
+
+.envato-kit-66-subscription-form .elementor-form-fields-wrapper .elementor-field-type-submit{
+	position:static;
+}
+
+.envato-kit-66-subscription-form .elementor-form-fields-wrapper .elementor-field-type-submit button{
+	position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translate(0, -50%);
+		-moz-transform: translate(0, -50%);
+		-webmit-transform: translate(0, -50%);
+}
+
+.envato-kit-66-testi-slider .elementor-testimonial__footer{
+	margin-top: -60px !important;
+	z-index: 99;
+  position: relative;
+}
+
+.envato-kit-66-featured-slider .elementor-slides .slick-prev{
+	width:50px;
+	height:50px;
+	background-color:#ffffff !important;
+	transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	left:-25px !important;
+	-webkit-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.32);
+	-moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.32);
+	box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.32);
+}
+
+.envato-kit-66-featured-slider .elementor-slides .slick-prev:before{
+	display:block;
+	margin-top:0px;
+	margin-left:0px;
+	transform:rotate(-45deg);
+	-moz-transform:rotate(-45deg);
+	-webkit-transform:rotate(-45deg);
+}
+
+.envato-kit-66-featured-slider .elementor-slides .slick-next{
+	width:50px;
+	height:50px;
+	background-color:#ffffff !important;
+	transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	right:-25px !important;
+	-webkit-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.32);
+	-moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.32);
+	box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.32);
+}
+
+.envato-kit-66-featured-slider .elementor-slides .slick-next:before{
+	display:block;
+	margin-top:-5px;
+	margin-right:-5px;
+	transform:rotate(-45deg);
+	-moz-transform:rotate(-45deg);
+	-webkit-transform:rotate(-45deg);
+}
+
+.envato-kit-66-orangetext{
+	color:#f4511e;
+}
+
+.envato-kit-66-countdown .elementor-countdown-label{
+	display:inline-block !important;
+	border:2px solid rgba(255,255,255,0.2);
+	padding:9px 20px;
+}
+
+/** End Envato Elements CSS: Blocks (69-3-4f8cfb8a1a68ec007f2be7a02bdeadd9) **/
+<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4955192" data-id="4955192" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-1b6a1a2 elementor-widget elementor-widget-shortcode" data-id="1b6a1a2" data-element_type="widget" data-widget_type="shortcode.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-shortcode">
+			<!-- START Homev3slider REVOLUTION SLIDER 6.6.15 --><p class="rs-p-wp-fix"></p>
+			<rs-module-wrap id="rev_slider_1_1_wrapper" data-source="gallery" style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+				<rs-module id="rev_slider_1_1" style="" data-version="6.6.15">
+					<rs-slides style="overflow: hidden; position: absolute;">
+						<rs-slide style="position: absolute;" data-key="rs-1" data-title="Slide" data-thumb="//techdeals.in/wp-content/uploads/revslider/home-v3-slider/electro-home-placeholder-background-2.png" data-anim="ms:1000;r:0;" data-in="o:0;" data-out="a:false;">
+							<img decoding="async" src="//techdeals.in/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="Slide" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//techdeals.in/wp-content/plugins/revslider/public/assets/assets/transparent.png" data-bg="c:#ffffff;" data-no-retina title="Techdeals 1">
+<!--
+							--><rs-layer
+								id="slider-1-slide-1-layer-3" 
+								data-type="text"
+								data-color="rgba(51, 62, 72, 1)"
+								data-xy="xo:36px;yo:101px;"
+								data-text="w:normal;s:47;l:48;fw:300;"
+								data-dim="w:445px;"
+								data-frame_0="y:bottom;o:1;rX:-20deg;rY:-20deg;"
+								data-frame_1="e:power3.out;st:690;sp:940;sR:690;"
+								data-frame_999="o:0;e:nothing;st:w;sR:7370;"
+								style="z-index:5;font-family:'Roboto';"
+							>AMD Ryzen 5 5600X <strong>GAME WITH THE BEST.</strong> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-5" 
+								class="slider-sm-btn btn-primary rev-btn rev-withicon"
+								data-type="button"
+								data-color="rgba(51, 62, 72, 1)"
+								data-xy="xo:36px;yo:298px;"
+								data-text="s:18;l:17;fw:300;"
+								data-actions='o:click;a:simplelink;target:_self;url:https://techdeals.in/amd-ryzen-5-5600x-processor/;'
+								data-rsp_bd="off"
+								data-padding="t:14;r:58;b:14;l:58;"
+								data-border="bor:10px,10px,10px,10px;"
+								data-frame_0="y:bottom;o:1;"
+								data-frame_1="e:power2.inOut;st:900;sR:900;"
+								data-frame_999="o:0;e:nothing;st:w;sR:7800;"
+								data-frame_hover="c:#333e48;bgc:#efca00;boc:#000;bor:10px,10px,10px,10px;bos:solid;oX:50;oY:50;sp:0;"
+								style="z-index:6;background-color:#fcb000;font-family:'Roboto';cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"
+							>COMPARE PRICES 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-6" 
+								data-type="text"
+								data-color="#ff3a2d"
+								data-rsp_ch="on"
+								data-xy="xo:34px;yo:66px;"
+								data-text="w:normal;s:16;l:22;fw:500;"
+								data-dim="w:343px;"
+								data-frame_0="y:-50px;"
+								data-frame_1="e:power2.out;st:1110;sp:1000;sR:1110;"
+								data-frame_999="o:0;e:nothing;st:w;sR:6890;"
+								style="z-index:7;font-family:'Roboto';"
+							>NEWLY LAUNCHED PROCESSOR 
+							</rs-layer><!--
+--><rs-layer
+								id="slider-1-slide-1-layer-7" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="xo:610px;yo:16px;"
+								data-text="l:22;"
+								data-dim="w:['415px','415px','415px','415px'];h:['415px','415px','415px','415px'];"
+								data-frame_0="x:175%;o:1;"
+								data-frame_0_mask="u:t;x:-100%;"
+								data-frame_1="e:power3.out;st:1110;sp:1500;sR:1110;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="o:0;e:nothing;st:w;sR:6390;"
+								style="z-index:8;"
+							><img fetchpriority="high" decoding="async" src="//techdeals.in/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="Amd Ryzen 5 5600X Processor" class="tp-rs-img rs-lazyload" width="600" height="600" data-lazyload="https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_webp/techdeals.in/wp-content/uploads/2020/11/100-100000065box-image-main-600x600-1.jpg" data-spai-egr="1" data-no-retina title="Techdeals 2"> 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-2" data-title="Slide" data-thumb="//techdeals.in/wp-content/uploads/revslider/home-v3-slider/electro-home-placeholder-background-2.png" data-anim="ms:600;r:0;" data-in="o:0;" data-out="a:false;">
+							<img decoding="async" src="//techdeals.in/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="Slide" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//techdeals.in/wp-content/plugins/revslider/public/assets/assets/transparent.png" data-bg="c:linear-gradient(rgba(247,247,247,1) 0%, rgba(215,215,215,1) 100%);" data-no-retina title="Techdeals 3">
+<!--
+							--><rs-layer
+								id="slider-1-slide-2-layer-3" 
+								data-type="text"
+								data-color="rgba(51, 62, 72, 1)"
+								data-rsp_ch="on"
+								data-xy="xo:34px;yo:36px;"
+								data-text="w:normal;s:58;l:60;fw:300;"
+								data-dim="w:445px;"
+								data-frame_0="x:100%;o:1;"
+								data-frame_0_mask="u:t;"
+								data-frame_1="st:500;sp:1500;sR:500;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="o:0;e:nothing;st:w;sR:7000;"
+								style="z-index:5;font-family:'Roboto';"
+							>Intel Core I5-10400 Processor 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-2-layer-5" 
+								class="slider-sm-btn btn-primary rev-btn rev-withicon"
+								data-type="button"
+								data-color="rgba(51, 62, 72, 1)"
+								data-xy="xo:36px;yo:317px;"
+								data-text="s:18;l:17;fw:300;"
+								data-actions='o:click;a:simplelink;target:_self;url:https://techdeals.in/product/intel-core-i5-10400-10th-gen-desktop-processor/;'
+								data-rsp_bd="off"
+								data-padding="t:14;r:58;b:14;l:58;"
+								data-border="bor:10px,10px,10px,10px;"
+								data-frame_0="y:bottom;o:1;"
+								data-frame_1="e:power2.inOut;st:500;sR:500;"
+								data-frame_999="o:0;e:nothing;st:w;sR:8200;"
+								data-frame_hover="c:#333e48;bgc:#efca00;boc:#000;bor:10px,10px,10px,10px;bos:solid;oX:50;oY:50;sp:0;"
+								style="z-index:6;background-color:#ea9a2a;font-family:'Roboto';cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"
+							>COMPARE PRICES 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-2-layer-6" 
+								data-type="text"
+								data-color="#ff3a2d"
+								data-rsp_ch="on"
+								data-xy="xo:34px;yo:176px;"
+								data-text="w:normal;s:18;l:22;fw:500;"
+								data-dim="w:343px;"
+								data-frame_0="y:top;o:1;"
+								data-frame_1="e:power2.out;st:500;sp:1000;sR:500;"
+								data-frame_999="o:0;e:nothing;st:w;sR:7500;"
+								style="z-index:7;font-family:'Roboto';"
+							>Newly Launched Intel's 10th Gen Processor 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-2-layer-8" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="xo:494px,488px,488px,488px;yo:-56px,-33px,-33px,-33px;"
+								data-text="l:22;"
+								data-dim="w:488px,520px,520px,520px;h:488px,520px,520px,520px;"
+								data-frame_0="x:right;o:1;"
+								data-frame_1="e:power2.inOut;st:500;sR:500;"
+								data-frame_999="x:50px;o:0;e:nothing;st:w;sR:8200;"
+								style="z-index:8;cursor:pointer;"
+							><img decoding="async" src="//techdeals.in/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="Core I5-10400" class="tp-rs-img rs-lazyload" width="600" height="600" data-lazyload="https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_webp/techdeals.in/wp-content/uploads/2020/06/i5-png.png" data-spai-egr="1" data-no-retina title="Techdeals 4"> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-2-layer-9" 
+								data-type="text"
+								data-color="rgba(10, 10, 10, 1)"
+								data-xy="xo:34px;yo:229px;"
+								data-text="w:normal;s:56;l:22;fw:700;"
+								data-frame_0="rZ:1;"
+								data-frame_1="rZ:1;e:power2.inOut;st:500;sR:500;"
+								data-frame_999="o:0;e:nothing;st:w;sR:8200;"
+								style="z-index:5;font-family:'Roboto';"
+							> 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-3" data-title="Slide" data-thumb="//techdeals.in/wp-content/uploads/revslider/home-v3-slider/electro-home-placeholder-background-2.png" data-anim="ms:600;r:0;" data-in="o:0;" data-out="a:false;">
+							<img decoding="async" src="//techdeals.in/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="Slide" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//techdeals.in/wp-content/plugins/revslider/public/assets/assets/transparent.png" data-bg="c:#ffffff;" data-no-retina title="Techdeals 1">
+<!--
+							--><rs-layer
+								id="slider-1-slide-3-layer-2" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="xo:625px,541px,541px,541px;yo:6px,45px,45px,45px;"
+								data-text="l:22;"
+								data-dim="w:['448px','448px','448px','448px'];h:['448px','448px','448px','448px'];"
+								data-frame_0="y:bottom;o:1;"
+								data-frame_1="e:power2.inOut;st:500;sR:500;"
+								data-frame_999="o:0;e:nothing;st:w;sR:8200;"
+								style="z-index:5;"
+							><img decoding="async" src="//techdeals.in/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="MSI GeForce RTX 3070 GAMING X TRIO 8GB Graphics Card" class="tp-rs-img rs-lazyload" width="600" height="600" data-lazyload="https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_webp/techdeals.in/wp-content/uploads/2020/10/geforce-rtx-3070-gaming-x-trio-image-main-600x600-1.jpg" data-spai-egr="1" data-no-retina title="Techdeals 6"> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-3-layer-3" 
+								data-type="text"
+								data-color="rgba(51, 62, 72, 1)"
+								data-xy="xo:36px;yo:101px;"
+								data-text="w:normal;s:47;l:48;fw:300;"
+								data-dim="w:445px;"
+								data-frame_0="y:bottom;o:1;rX:-20deg;rY:-20deg;"
+								data-frame_1="e:power3.out;st:690;sp:940;sR:690;"
+								data-frame_999="o:0;e:nothing;st:w;sR:7370;"
+								style="z-index:6;font-family:'Roboto';"
+							>MSI GeForce RTX 3070 GAMING X TRIO <strong>8GB</strong> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-3-layer-5" 
+								class="slider-sm-btn btn-primary rev-btn rev-withicon"
+								data-type="button"
+								data-color="rgba(51, 62, 72, 1)"
+								data-xy="xo:36px;yo:298px;"
+								data-text="s:18;l:17;fw:300;"
+								data-actions='o:click;a:simplelink;target:_self;url:https://techdeals.in/msi-geforce-rtx-3070-gaming-x-trio-8gb-graphics-card/;'
+								data-rsp_bd="off"
+								data-padding="t:14;r:58;b:14;l:58;"
+								data-border="bor:10px,10px,10px,10px;"
+								data-frame_0="y:bottom;o:1;"
+								data-frame_1="e:power2.inOut;st:900;sR:900;"
+								data-frame_999="o:0;e:nothing;st:w;sR:7800;"
+								data-frame_hover="c:#333e48;bgc:#efca00;boc:#000;bor:10px,10px,10px,10px;bos:solid;oX:50;oY:50;sp:0;"
+								style="z-index:7;background-color:#f79400;font-family:'Roboto';cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;"
+							>COMPARE PRICES 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-3-layer-6" 
+								data-type="text"
+								data-color="#ff3a2d"
+								data-rsp_ch="on"
+								data-xy="xo:34px;yo:66px;"
+								data-text="w:normal;s:16;l:22;fw:500;"
+								data-dim="w:343px;"
+								data-frame_0="y:-50px;"
+								data-frame_1="e:power2.out;st:1110;sp:1000;sR:1110;"
+								data-frame_999="o:0;e:nothing;st:w;sR:6890;"
+								style="z-index:8;font-family:'Roboto';"
+							>GRAPHICS CARD 
+							</rs-layer><!--
+-->						</rs-slide>
+					</rs-slides>
+				</rs-module>
+				<script type="rocketlazyloadscript">
+					setREVStartSize({c: 'rev_slider_1_1',rl:[1240,1024,1024,1024],el:[417,516,516,516],gw:[1240,1024,1024,1024],gh:[417,516,516,516],type:'standard',justify:'',layout:'fullwidth',mh:"417"});if (window.RS_MODULES!==undefined && window.RS_MODULES.modules!==undefined && window.RS_MODULES.modules["revslider11"]!==undefined) {window.RS_MODULES.modules["revslider11"].once = false;window.revapi1 = undefined;if (window.RS_MODULES.checkMinimal!==undefined) window.RS_MODULES.checkMinimal()}
+				</script>
+			</rs-module-wrap>
+			<!-- END REVOLUTION SLIDER -->
+</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-48dd92a elementor-widget elementor-widget-heading" data-id="48dd92a" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h1 class="elementor-heading-title elementor-size-default">Techdeals - Compare Prices for <mark>1,233 Products</mark></h1>		</div>
+				</div>
+				<div class="elementor-element elementor-element-1ef6dad elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="1ef6dad" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-70a956a elementor-widget elementor-widget-heading" data-id="70a956a" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h6 class="elementor-heading-title elementor-size-default">Choose Category</h6>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-ec8afed elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ec8afed" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-90db1f3" data-id="90db1f3" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-1147fd9 elementor-widget elementor-widget-wpsm_cartbox" data-id="1147fd9" data-element_type="widget" data-widget_type="wpsm_cartbox.default">
+				<div class="elementor-widget-container">
+			<div class="rh-cartbox catboxmodule"><div class="rh-flex-center-align"><div class="rh-cbox-left floatleft mr20"><div class="lineheight20 rehub-main-font mb10">PROCESSOR</div><div class="lineheight15 font80 mb10">Compare and buy best Processor online</div><div class="lineheight15 font85 fontbold"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/processor/">Show me Prices</a></div></div><div class="rh-cbox-right rh-flex-right-align text-center width-80 height-80"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/processor/"><img decoding="async" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5OSA1NiIgd2lkdGg9Ijk5IiBoZWlnaHQ9IjU2IiBkYXRhLXU9Imh0dHBzJTNBJTJGJTJGdGVjaGRlYWxzLmluJTJGd3AtY29udGVudCUyRnVwbG9hZHMlMkZ0aHVtYnNfZGlyJTJGNjRhMGY3aG1wcmJ6LWUxNTc2MDQzNTc1NDY1LTF3MXp4NDFndmc1eHJidnkxcmlpdDhfMzY2ODk2YzQ4ZmQ5OWE4YjhiY2UxYmJlY2I5ZTNjOTktMXloMHR0MTRodndwbmVocXplaDhka2kzaHNwbXhpc2M3cDV4dGhxMTh0MmMucG5nIiBkYXRhLXc9Ijk5IiBkYXRhLWg9IjU2IiBkYXRhLWJpcD0iIj48L3N2Zz4=" data-spai="1" alt="PROCESSOR" title="Techdeals 7"></a></div></div></div>		</div>
+				</div>
+				<div class="elementor-element elementor-element-58b84cd elementor-widget elementor-widget-wpsm_cartbox" data-id="58b84cd" data-element_type="widget" data-widget_type="wpsm_cartbox.default">
+				<div class="elementor-widget-container">
+			<div class="rh-cartbox catboxmodule"><div class="rh-flex-center-align"><div class="rh-cbox-left floatleft mr20"><div class="lineheight20 rehub-main-font mb10">MOTHERBOARD</div><div class="lineheight15 font80 mb10">Compare and buy best motherboard online</div><div class="lineheight15 font85 fontbold"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/motherboard/">Show me Prices</a></div></div><div class="rh-cbox-right rh-flex-right-align text-center width-80 height-80"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/motherboard/"><img decoding="async" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5OSA4MCIgd2lkdGg9Ijk5IiBoZWlnaHQ9IjgwIiBkYXRhLXU9Imh0dHBzJTNBJTJGJTJGdGVjaGRlYWxzLmluJTJGd3AtY29udGVudCUyRnVwbG9hZHMlMkZ0aHVtYnNfZGlyJTJGMS1lMTU3NjA0MzQ5NjcyMi0xeWdpc2Z4MXhpdWpnYjYzNmpuY2c3OHZ4dmtvOWxteGpvajRsZTV5aGw5Zy5wbmciIGRhdGEtdz0iOTkiIGRhdGEtaD0iODAiIGRhdGEtYmlwPSIiPjwvc3ZnPg==" data-spai="1" alt="MOTHERBOARD" title="Techdeals 8"></a></div></div></div>		</div>
+				</div>
+				<div class="elementor-element elementor-element-e1ca5ac elementor-widget elementor-widget-wpsm_cartbox" data-id="e1ca5ac" data-element_type="widget" data-widget_type="wpsm_cartbox.default">
+				<div class="elementor-widget-container">
+			<div class="rh-cartbox catboxmodule"><div class="rh-flex-center-align"><div class="rh-cbox-left floatleft mr20"><div class="lineheight20 rehub-main-font mb10">GRAPHIC CARD</div><div class="lineheight15 font80 mb10">Compare and buy best graphic card online</div><div class="lineheight15 font85 fontbold"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/graphic-cards/">Show me Prices</a></div></div><div class="rh-cbox-right rh-flex-right-align text-center width-80 height-80"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/graphic-cards/"><img decoding="async" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5OSA4MCIgd2lkdGg9Ijk5IiBoZWlnaHQ9IjgwIiBkYXRhLXU9Imh0dHBzJTNBJTJGJTJGdGVjaGRlYWxzLmluJTJGd3AtY29udGVudCUyRnVwbG9hZHMlMkZ0aHVtYnNfZGlyJTJGcHJvZHVjdF8wXzIwMTcwMzIzMTA1MjE4XzU4ZDMzODYyNTcyYjktZTE1NzYwNDMzMzQxNzQtMXlnaXQ5MDJkbmowcWZoZWM1dHg3dW1vZHNmcm9ibG00MzVjdzJocTJtZWMucG5nIiBkYXRhLXc9Ijk5IiBkYXRhLWg9IjgwIiBkYXRhLWJpcD0iIj48L3N2Zz4=" data-spai="1" alt="GRAPHIC CARD" title="Techdeals 9"></a></div></div></div>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-a6a1272" data-id="a6a1272" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-20a1027 elementor-widget elementor-widget-wpsm_cartbox" data-id="20a1027" data-element_type="widget" data-widget_type="wpsm_cartbox.default">
+				<div class="elementor-widget-container">
+			<div class="rh-cartbox catboxmodule"><div class="rh-flex-center-align"><div class="rh-cbox-left floatleft mr20"><div class="lineheight20 rehub-main-font mb10">HARD DISK / SSD</div><div class="lineheight15 font80 mb10">Compare and buy best storage online</div><div class="lineheight15 font85 fontbold"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/storage/">Show me prices</a></div></div><div class="rh-cbox-right rh-flex-right-align text-center width-80 height-80"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/storage/"><img decoding="async" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZGF0YS11PSJodHRwcyUzQSUyRiUyRnRlY2hkZWFscy5pbiUyRndwLWNvbnRlbnQlMkZ1cGxvYWRzJTJGdGh1bWJzX2RpciUyRjItZTE1NzYwNDM3ODU3NTItMXlnaXNnbjV3NG92NzFvNTk3Nm1yNGlhcXRsemtuZzk3OWdjeXk0YmJvY2sucG5nIiBkYXRhLXc9IjEwMCIgZGF0YS1oPSIxMDAiIGRhdGEtYmlwPSIiPjwvc3ZnPg==" data-spai="1" alt="HARD DISK / SSD" title="Techdeals 10"></a></div></div></div>		</div>
+				</div>
+				<div class="elementor-element elementor-element-cf0c461 elementor-widget elementor-widget-wpsm_cartbox" data-id="cf0c461" data-element_type="widget" data-widget_type="wpsm_cartbox.default">
+				<div class="elementor-widget-container">
+			<div class="rh-cartbox catboxmodule"><div class="rh-flex-center-align"><div class="rh-cbox-left floatleft mr20"><div class="lineheight20 rehub-main-font mb10">RAM</div><div class="lineheight15 font80 mb10">Compare and buy best RAM online</div><div class="lineheight15 font85 fontbold"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/ram/">Show me Prices</a></div></div><div class="rh-cbox-right rh-flex-right-align text-center width-80 height-80"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/ram/"><img decoding="async" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZGF0YS11PSJodHRwcyUzQSUyRiUyRnRlY2hkZWFscy5pbiUyRndwLWNvbnRlbnQlMkZ1cGxvYWRzJTJGdGh1bWJzX2RpciUyRjEtMS1lMTU3NjA0MzU1MTExOS0xeWdpc2YxcHo3MWNrODYwb3lsc3Z3NHNrcXFhcDUyNTVzODFxcWJraHNsZy5wbmciIGRhdGEtdz0iMTAwIiBkYXRhLWg9IjEwMCIgZGF0YS1iaXA9IiI+PC9zdmc+" data-spai="1" alt="RAM" title="Techdeals 11"></a></div></div></div>		</div>
+				</div>
+				<div class="elementor-element elementor-element-b22da49 elementor-widget elementor-widget-wpsm_cartbox" data-id="b22da49" data-element_type="widget" data-widget_type="wpsm_cartbox.default">
+				<div class="elementor-widget-container">
+			<div class="rh-cartbox catboxmodule"><div class="rh-flex-center-align"><div class="rh-cbox-left floatleft mr20"><div class="lineheight20 rehub-main-font mb10">POWER SUPPLY</div><div class="lineheight15 font80 mb10">Compare and buy best power supply online</div><div class="lineheight15 font85 fontbold"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/power-supply/">Show me Prices</a></div></div><div class="rh-cbox-right rh-flex-right-align text-center width-80 height-80"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/power-supply/"><img decoding="async" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZGF0YS11PSJodHRwcyUzQSUyRiUyRnRlY2hkZWFscy5pbiUyRndwLWNvbnRlbnQlMkZ1cGxvYWRzJTJGdGh1bWJzX2RpciUyRkNQLTkwMjAxNTYtTkEtR2FsbGVyeS1STTg1MHgtV0hULTAxLWUxNTc2MDQzNDM4Mzk0LTF5Z2l0NG5lbTBoMmEwaDF3OG03ZWIyN2s0N3Z1MHBvNmxseW1yMzV3amQwLnBuZyIgZGF0YS13PSIxMDAiIGRhdGEtaD0iMTAwIiBkYXRhLWJpcD0iIj48L3N2Zz4=" data-spai="1" alt="POWER SUPPLY" title="Techdeals 12"></a></div></div></div>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-370b136" data-id="370b136" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-52da43e elementor-widget elementor-widget-wpsm_cartbox" data-id="52da43e" data-element_type="widget" data-widget_type="wpsm_cartbox.default">
+				<div class="elementor-widget-container">
+			<div class="rh-cartbox catboxmodule"><div class="rh-flex-center-align"><div class="rh-cbox-left floatleft mr20"><div class="lineheight20 rehub-main-font mb10">PC CASES</div><div class="lineheight15 font80 mb10">Compare and buy best cases online</div><div class="lineheight15 font85 fontbold"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/cabinet-case/">Show me Prices</a></div></div><div class="rh-cbox-right rh-flex-right-align text-center width-80 height-80"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/cabinet-case/"><img decoding="async" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZGF0YS11PSJodHRwcyUzQSUyRiUyRnRlY2hkZWFscy5pbiUyRndwLWNvbnRlbnQlMkZ1cGxvYWRzJTJGdGh1bWJzX2RpciUyRkNDLTkwMTExNjgtV1ctR2FsbGVyeS02ODBYLVJHQi1CbGFjay0wMS1lMTU3NjA0MzM5NjY5NC0xeWdpdDNzMm5vbnZkeGd6ZW5rbnR6eTQ2emRpOWs0dnNwYXZzMzc0Y3lyby5wbmciIGRhdGEtdz0iMTAwIiBkYXRhLWg9IjEwMCIgZGF0YS1iaXA9IiI+PC9zdmc+" data-spai="1" alt="PC CASES" title="Techdeals 13"></a></div></div></div>		</div>
+				</div>
+				<div class="elementor-element elementor-element-80d3def elementor-widget elementor-widget-wpsm_cartbox" data-id="80d3def" data-element_type="widget" data-widget_type="wpsm_cartbox.default">
+				<div class="elementor-widget-container">
+			<div class="rh-cartbox catboxmodule"><div class="rh-flex-center-align"><div class="rh-cbox-left floatleft mr20"><div class="lineheight20 rehub-main-font mb10">COOLING SYSTEM</div><div class="lineheight15 font80 mb10">Compare and buy best coolers online</div><div class="lineheight15 font85 fontbold"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/cooling-system/">Show me Prices</a></div></div><div class="rh-cbox-right rh-flex-right-align text-center width-80 height-80"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/cooling-system/"><img decoding="async" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZGF0YS11PSJodHRwcyUzQSUyRiUyRnRlY2hkZWFscy5pbiUyRndwLWNvbnRlbnQlMkZ1cGxvYWRzJTJGdGh1bWJzX2RpciUyRkNXLTkwNjAwMzktV1ctR2FsbGVyeS1IMTAwaS1SR0ItUExBVElOVU0tMDEtZTE1NzYwNDM1MTgyMjMtMXlnaXQ1ZGlrbWJlMHF6M3l3NWhwOGJtZDI5NzUyaXp1Nmo3MGF6djZ1aXMucG5nIiBkYXRhLXc9IjEwMCIgZGF0YS1oPSIxMDAiIGRhdGEtYmlwPSIiPjwvc3ZnPg==" data-spai="1" alt="COOLING SYSTEM" title="Techdeals 14"></a></div></div></div>		</div>
+				</div>
+				<div class="elementor-element elementor-element-8dcd90f elementor-widget elementor-widget-wpsm_cartbox" data-id="8dcd90f" data-element_type="widget" data-widget_type="wpsm_cartbox.default">
+				<div class="elementor-widget-container">
+			<div class="rh-cartbox catboxmodule"><div class="rh-flex-center-align"><div class="rh-cbox-left floatleft mr20"><div class="lineheight20 rehub-main-font mb10">MONITOR</div><div class="lineheight15 font80 mb10">Compare and buy best monitor online</div><div class="lineheight15 font85 fontbold"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/monitor/">Show me Prices</a></div></div><div class="rh-cbox-right rh-flex-right-align text-center width-80 height-80"><a target="_blank" rel="nofollow" href="https://techdeals.in/product-category/monitor/"><img decoding="async" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZGF0YS11PSJodHRwcyUzQSUyRiUyRnRlY2hkZWFscy5pbiUyRndwLWNvbnRlbnQlMkZ1cGxvYWRzJTJGdGh1bWJzX2RpciUyRlJ6bk4yTFFHNGNBZ3VZWkxfc2V0dGluZ18wMDBfMV85MF9lbmRfNTAwLTF5Z2l0YXRjYTY0dTM5cWppc280ejVzN2U1ajF4eTR4OTFnZnR5YjR1Njg0LnBuZyIgZGF0YS13PSIxMDAiIGRhdGEtaD0iMTAwIiBkYXRhLWJpcD0iIj48L3N2Zz4=" data-spai="1" alt="MONITOR" title="Techdeals 15"></a></div></div></div>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-4b8036c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4b8036c" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6f73ef7" data-id="6f73ef7" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-bbaffb3 elementor-widget elementor-widget-heading" data-id="bbaffb3" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h6 class="elementor-heading-title elementor-size-default">Latest Product</h6>		</div>
+				</div>
+				<div class="elementor-element elementor-element-7b56a11 elementor-widget elementor-widget-wpsm_woogrid" data-id="7b56a11" data-element_type="widget" data-widget_type="wpsm_woogrid.default">
+				<div class="elementor-widget-container">
+							 
+		<div class="woocommerce">
+			<div class="rh-flex-center-align tabletblockdisplay re_filter_panel tax_enabled_drop heading_enabled"><div class="rh-border-line below-border disablemobilemargin re_filter_heading fontbold font130 pt15 pb15 mr15 rtlml15 position-relative lineheight20">Latest Product</div><ul class="re_filter_ul"><li class="inlinestyle"><span data-sorttype='{"filtertype":"all","filterorder":"DESC","filterdate":"all","_id":"a84a58d"}' class="active re_filtersort_btn resort_0" data-containerid="rh_woogrid_165439139">Show all</span></li><li class="inlinestyle"><span data-sorttype='{"filtertype":"meta","filtermetakey":"rehub_views_mon","filterorder":"DESC","filterdate":"all","_id":"379235c"}' class="re_filtersort_btn resort_1" data-containerid="rh_woogrid_165439139">Popular in this month</span></li><li class="inlinestyle"><span data-sorttype='{"filtertype":"meta","filtermetakey":"post_wish_count","filterorder":"DESC","filterdate":"all","_id":"6666d1e"}' class="re_filtersort_btn resort_2" data-containerid="rh_woogrid_165439139">Most wishlisted</span></li></ul><div class="rh-flex-right-align"><ul class="re_tax_dropdown"><li class="label"><span class="rh_tax_placeholder">Choose category</span><span class="rh_choosed_tax"></span></li><li class="rh_drop_item"><span data-sorttype="" class="re_filtersort_btn" data-containerid="rh_woogrid_165439139">All categories</span></li><li class="rh_drop_item"><span data-sorttype='{"filtertype":"tax","filtertaxkey":"product_cat","filtertaxtermslug":"cabinet-case"}' class="re_filtersort_btn" data-containerid="rh_woogrid_165439139">Cabinet (Case)</span></li><li class="rh_drop_item"><span data-sorttype='{"filtertype":"tax","filtertaxkey":"product_cat","filtertaxtermslug":"cooling-system"}' class="re_filtersort_btn" data-containerid="rh_woogrid_165439139">Cooling System</span></li><li class="rh_drop_item"><span data-sorttype='{"filtertype":"tax","filtertaxkey":"product_cat","filtertaxtermslug":"graphic-cards"}' class="re_filtersort_btn" data-containerid="rh_woogrid_165439139">Graphic Cards</span></li><li class="rh_drop_item"><span data-sorttype='{"filtertype":"tax","filtertaxkey":"product_cat","filtertaxtermslug":"monitor"}' class="re_filtersort_btn" data-containerid="rh_woogrid_165439139">Monitor</span></li><li class="rh_drop_item"><span data-sorttype='{"filtertype":"tax","filtertaxkey":"product_cat","filtertaxtermslug":"motherboard"}' class="re_filtersort_btn" data-containerid="rh_woogrid_165439139">Motherboard</span></li><li class="rh_drop_item"><span data-sorttype='{"filtertype":"tax","filtertaxkey":"product_cat","filtertaxtermslug":"power-supply"}' class="re_filtersort_btn" data-containerid="rh_woogrid_165439139">Power supply</span></li><li class="rh_drop_item"><span data-sorttype='{"filtertype":"tax","filtertaxkey":"product_cat","filtertaxtermslug":"processor"}' class="re_filtersort_btn" data-containerid="rh_woogrid_165439139">Processors</span></li><li class="rh_drop_item"><span data-sorttype='{"filtertype":"tax","filtertaxkey":"product_cat","filtertaxtermslug":"ram"}' class="re_filtersort_btn" data-containerid="rh_woogrid_165439139">RAM</span></li><li class="rh_drop_item"><span data-sorttype='{"filtertype":"tax","filtertaxkey":"product_cat","filtertaxtermslug":"storage"}' class="re_filtersort_btn" data-containerid="rh_woogrid_165439139">Storage</span></li></ul></div></div>			 		
+			  
+						<div class="rh-flex-eq-height products  col_wrap_six grid_woo" data-filterargs='{"post_type":"product","posts_per_page":"12","orderby":"rand","order":"","tax_query":[{"relation":"AND","0":{"taxonomy":"product_visibility","field":"name","terms":"exclude-from-catalog","operator":"NOT IN"}}],"no_found_rows":1}' data-template="woogridpart" id="rh_woogrid_165439139" data-innerargs='{"columns":"6_col","woolinktype":"product","disable_thumbs":"","gridtype":"regular","soldout":"","attrelpanel":""}'>                   
+			
+													  		    <div class="product col_item woo_grid_compact two_column_mobile type-product ">
+    <div class="button_action rh-shadow-sceu pt5 pb5">
+        <div>
+                                    <div class="heart_thumb_wrap text-center"><span class="flowhidden cell_wishlist"><span class="heartplus" data-post_id="2970" data-informer="0"><span class="ml5 rtlmr5 wishaddedwrap" id="wishadded2970">Added to wishlist</span><span class="ml5 rtlmr5 wishremovedwrap" id="wishremoved2970">Removed from wishlist</span> </span></span><span id="wishcount2970" class="thumbscount">0</span> </div>  
+        </div>
+                                                                            
+    </div>   
+             
+    <figure class="mb15 mt25 position-relative">    
+        <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" title="Corsair VS450 450 Watt Power Supply" href="https://techdeals.in/corsair-vs450-450-watt-power-supply/">
+                            <img decoding="async" width="300" height="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiIHdpZHRoPSIyMDQ4IiBoZWlnaHQ9IjIwNDgiIGRhdGEtdT0iaHR0cHMlM0ElMkYlMkZ0ZWNoZGVhbHMuaW4lMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjAlMkYwMiUyRnZzNDUwLW1haW4tNjAweDYwMC0xLTIwNDh4MjA0OC5qcGciIGRhdGEtdz0iMjA0OCIgZGF0YS1oPSIyMDQ4IiBkYXRhLWJpcD0iIj48L3N2Zz4=" data-spai="1" class="" alt="Corsair VS450 450 Watt Power Supply" srcset=" " sizes="(max-width: 300px) 100vw, 300px" title="Techdeals 16">      
+                       
+        </a>  
+         
+        <div class="gridcountdown"></div>        
+    </figure>
+    <div class="cat_for_grid lineheight15">
+                <a href="https://techdeals.in/450-watt/" class="woocat">450 Watt</a>                         
+    </div>
+     
+    <h3 class=" text-clamp text-clamp-2">
+                        <a href="https://techdeals.in/corsair-vs450-450-watt-power-supply/">Corsair VS450 450 Watt Power Supply</a>
+    </h3>
+             
+    <div class="rh_woo_star" title="Rated 9 out of 10"><span class="rhwoostar rhwoostar1 active">&#9733;</span><span class="rhwoostar rhwoostar2 active">&#9733;</span><span class="rhwoostar rhwoostar3 active">&#9733;</span><span class="rhwoostar rhwoostar4 active">&#9733;</span><span class="rhwoostar rhwoostar5 halfactive">&#9733;</span></div> 
+                                                                        <div class="font80 greycolor lineheight15">
+        <div class="mb10 compare-domain-icon"><span>Best deal at: </span><span class="compare-domain-text fontbold">amazon.in</span></div>        </div>
+        
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"></div>
+    
+
+    <div class="border-top pt10 pr10 pl10 pb10 rh-flex-center-align abposbot">
+        <div class="price_for_grid redbrightcolor floatleft rehub-btn-font mr10">
+            
+	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8377;</span>2,688.00</bdi></span></span>
+        </div>
+        <div class="rh-flex-right-align btn_for_grid floatright">
+             
+                                    <a class="font90 greencolor" href="https://techdeals.in/corsair-vs450-450-watt-power-supply/">+ 3 more</a>
+</div>            
+    </div>
+           
+</div>					
+					  
+													  		    <div class="product col_item woo_grid_compact two_column_mobile type-product ">
+    <div class="button_action rh-shadow-sceu pt5 pb5">
+        <div>
+                                    <div class="heart_thumb_wrap text-center"><span class="flowhidden cell_wishlist"><span class="heartplus" data-post_id="8572" data-informer="2"><span class="ml5 rtlmr5 wishaddedwrap" id="wishadded8572">Added to wishlist</span><span class="ml5 rtlmr5 wishremovedwrap" id="wishremoved8572">Removed from wishlist</span> </span></span><span id="wishcount8572" class="thumbscount">2</span> </div>  
+        </div>
+                                                                            
+    </div>   
+             
+    <figure class="mb15 mt25 position-relative">    
+        <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" title="Inno3d RTX 3060 Twin X2 12GB Graphics Card" href="https://techdeals.in/inno3d-rtx-3060-twin-x2-12gb-graphics-card/">
+                            <img decoding="async" width="300" height="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiIHdpZHRoPSIyMDQ4IiBoZWlnaHQ9IjIwNDgiIGRhdGEtdT0iaHR0cHMlM0ElMkYlMkZ0ZWNoZGVhbHMuaW4lMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjMlMkYwMSUyRklubm8zZC1SVFgtMzA2MC1Ud2luLVgyLTEyR0ItR3JhcGhpY3MtQ2FyZC0yMDQ4eDIwNDguanBnIiBkYXRhLXc9IjIwNDgiIGRhdGEtaD0iMjA0OCIgZGF0YS1iaXA9IiI+PC9zdmc+" data-spai="1" class="" alt="Inno3d RTX 3060 Twin X2 12GB Graphics Card" srcset=" " sizes="(max-width: 300px) 100vw, 300px" title="Techdeals 17">      
+                       
+        </a>  
+         
+        <div class="gridcountdown"></div>        
+    </figure>
+    <div class="cat_for_grid lineheight15">
+                <a href="https://techdeals.in/geforce-rtx-30-series/" class="woocat">Geforce RTX 30 Series</a>                         
+    </div>
+     
+    <h3 class=" text-clamp text-clamp-2">
+                        <a href="https://techdeals.in/inno3d-rtx-3060-twin-x2-12gb-graphics-card/">Inno3d RTX 3060 Twin X2 12GB Graphics Card</a>
+    </h3>
+             
+    <div class="rh_woo_star" title="Rated 9 out of 10"><span class="rhwoostar rhwoostar1 active">&#9733;</span><span class="rhwoostar rhwoostar2 active">&#9733;</span><span class="rhwoostar rhwoostar3 active">&#9733;</span><span class="rhwoostar rhwoostar4 active">&#9733;</span><span class="rhwoostar rhwoostar5 halfactive">&#9733;</span></div> 
+                                                                        <div class="font80 greycolor lineheight15">
+        <div class="mb10 compare-domain-icon"><span>Best deal at: </span><span class="compare-domain-text fontbold">vedantcomputers.com</span></div>        </div>
+        
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"></div>
+    
+
+    <div class="border-top pt10 pr10 pl10 pb10 rh-flex-center-align abposbot">
+        <div class="price_for_grid redbrightcolor floatleft rehub-btn-font mr10">
+            
+	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8377;</span>24,375.00</bdi></span></span>
+        </div>
+        <div class="rh-flex-right-align btn_for_grid floatright">
+             
+                                    <a class="font90 greencolor" href="https://techdeals.in/inno3d-rtx-3060-twin-x2-12gb-graphics-card/">+ 3 more</a>
+                               
+                                    
+                        
+        </div>            
+    </div>
+           
+</div>					
+					  
+													  		    <div class="product col_item woo_grid_compact two_column_mobile type-product ">
+    <div class="button_action rh-shadow-sceu pt5 pb5">
+        <div>
+                                    <div class="heart_thumb_wrap text-center"><span class="flowhidden cell_wishlist"><span class="heartplus" data-post_id="1398" data-informer="0"><span class="ml5 rtlmr5 wishaddedwrap" id="wishadded1398">Added to wishlist</span><span class="ml5 rtlmr5 wishremovedwrap" id="wishremoved1398">Removed from wishlist</span> </span></span><span id="wishcount1398" class="thumbscount">0</span> </div>  
+        </div>
+                                                                            
+    </div>   
+         
+        <span class="re-ribbon-badge badge_1"><span></span></span> 
+         
+    <figure class="mb15 mt25 position-relative">    
+        <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" title="AMD Ryzen 5 3600 3rd Gen Desktop Processor" href="https://techdeals.in/amd-ryzen-5-3600/">
+                            <img decoding="async" width="300" height="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzAwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZGF0YS11PSJodHRwcyUzQSUyRiUyRnRlY2hkZWFscy5pbiUyRndwLWNvbnRlbnQlMkZ1cGxvYWRzJTJGMjAxOSUyRjExJTJGNzFXUEdYUUxjTEwuX1NMMTM4NF8tMzAweDMwMC5qcGciIGRhdGEtdz0iMzAwIiBkYXRhLWg9IjMwMCIgZGF0YS1iaXA9IiI+PC9zdmc+" data-spai="1" class="" alt="AMD Ryzen 5 3600, AMD Ryzen 5 3600x" srcset=" " sizes="(max-width: 300px) 100vw, 300px" title="Techdeals 18">      
+                       
+        </a>  
+         
+        <div class="gridcountdown"></div>        
+    </figure>
+    <div class="cat_for_grid lineheight15">
+                <a href="https://techdeals.in/amd/" class="woocat">AMD</a>                         
+    </div>
+     
+    <h3 class=" text-clamp text-clamp-2">
+                        <a href="https://techdeals.in/amd-ryzen-5-3600/">AMD Ryzen 5 3600 3rd Gen Desktop Processor</a>
+    </h3>
+             
+    <div class="rh_woo_star" title="Rated 9.5 out of 10"><span class="rhwoostar rhwoostar1 active">&#9733;</span><span class="rhwoostar rhwoostar2 active">&#9733;</span><span class="rhwoostar rhwoostar3 active">&#9733;</span><span class="rhwoostar rhwoostar4 active">&#9733;</span><span class="rhwoostar rhwoostar5 halfactive">&#9733;</span></div> 
+                                                                        <div class="font80 greycolor lineheight15">
+        <div class="mb10 compare-domain-icon"><span>Best deal at: </span><span class="compare-domain-text fontbold">mdcomputers.in</span></div>        </div>
+        
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"></div>
+    
+
+    <div class="border-top pt10 pr10 pl10 pb10 rh-flex-center-align abposbot">
+        <div class="price_for_grid redbrightcolor floatleft rehub-btn-font mr10">
+            
+	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8377;</span>9,199.00</bdi></span></span>
+        </div>
+        <div class="rh-flex-right-align btn_for_grid floatright">
+             
+                                    <a class="font90 greencolor" href="https://techdeals.in/amd-ryzen-5-3600/">+ 3 more</a>
+                               
+                                    
+                        
+        </div>            
+    </div>
+           
+</div>					
+					  
+													  		    <div class="product col_item woo_grid_compact two_column_mobile type-product ">
+    <div class="button_action rh-shadow-sceu pt5 pb5">
+        <div>
+                                    <div class="heart_thumb_wrap text-center"><span class="flowhidden cell_wishlist"><span class="heartplus" data-post_id="2589" data-informer="1"><span class="ml5 rtlmr5 wishaddedwrap" id="wishadded2589">Added to wishlist</span><span class="ml5 rtlmr5 wishremovedwrap" id="wishremoved2589">Removed from wishlist</span> </span></span><span id="wishcount2589" class="thumbscount">1</span> </div>  
+        </div>
+                                                                            
+    </div>   
+             
+    <figure class="mb15 mt25 position-relative">    
+        <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" title="MSI GeForce RTX 2080 Ti VENTUS 11G OC Graphic Card" href="https://techdeals.in/msi-geforce-rtx-2080-ti-ventus-11g-oc/">
+                            <img decoding="async" width="300" height="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiIHdpZHRoPSIyMDQ4IiBoZWlnaHQ9IjIwNDgiIGRhdGEtdT0iaHR0cHMlM0ElMkYlMkZ0ZWNoZGVhbHMuaW4lMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjAlMkYwMSUyRnJ0eC0yMDgwLXRpLXZlbnR1cy0xMWctaW1hZ2UtbWFpbi02MDB4NjAwLTEtMjA0OHgyMDQ4LmpwZyIgZGF0YS13PSIyMDQ4IiBkYXRhLWg9IjIwNDgiIGRhdGEtYmlwPSIiPjwvc3ZnPg==" data-spai="1" class="" alt="MSI GeForce RTX 2080 Ti VENTUS 11G OC" srcset=" " sizes="(max-width: 300px) 100vw, 300px" title="Techdeals 19">      
+                       
+        </a>  
+         
+        <div class="gridcountdown"></div>        
+    </figure>
+    <div class="cat_for_grid lineheight15">
+                <a href="https://techdeals.in/geforce-rtx-20-series/" class="woocat">Geforce RTX 20 Series</a>                         
+    </div>
+     
+    <h3 class=" text-clamp text-clamp-2">
+                        <a href="https://techdeals.in/msi-geforce-rtx-2080-ti-ventus-11g-oc/">MSI GeForce RTX 2080 Ti VENTUS 11G OC Graphic Card</a>
+    </h3>
+             
+    <div class="rh_woo_star" title="Rated 9.5 out of 10"><span class="rhwoostar rhwoostar1 active">&#9733;</span><span class="rhwoostar rhwoostar2 active">&#9733;</span><span class="rhwoostar rhwoostar3 active">&#9733;</span><span class="rhwoostar rhwoostar4 active">&#9733;</span><span class="rhwoostar rhwoostar5 halfactive">&#9733;</span></div> 
+                                                                        <div class="font80 greycolor lineheight15">
+        <div class="mb10 compare-domain-icon"><span>Best deal at: </span><span class="compare-domain-text fontbold">mdcomputers.in</span></div>        </div>
+        
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"></div>
+    
+
+    <div class="border-top pt10 pr10 pl10 pb10 rh-flex-center-align abposbot">
+        <div class="price_for_grid redbrightcolor floatleft rehub-btn-font mr10">
+            
+	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8377;</span>103,399.00</bdi></span></span>
+        </div>
+        <div class="rh-flex-right-align btn_for_grid floatright">
+             
+                                    <a class="font90 greencolor" href="https://techdeals.in/msi-geforce-rtx-2080-ti-ventus-11g-oc/">+ 2 more</a>
+                               
+                                    
+                        
+        </div>            
+    </div>
+           
+</div>					
+					  
+													  		    <div class="product col_item woo_grid_compact two_column_mobile type-product ">
+    <div class="button_action rh-shadow-sceu pt5 pb5">
+        <div>
+                                    <div class="heart_thumb_wrap text-center"><span class="flowhidden cell_wishlist"><span class="heartplus" data-post_id="3006" data-informer="0"><span class="ml5 rtlmr5 wishaddedwrap" id="wishadded3006">Added to wishlist</span><span class="ml5 rtlmr5 wishremovedwrap" id="wishremoved3006">Removed from wishlist</span> </span></span><span id="wishcount3006" class="thumbscount">0</span> </div>  
+        </div>
+                                                                            
+    </div>   
+             
+    <figure class="mb15 mt25 position-relative">    
+        <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" title="Corsair TX650M 650W 80 Plus Gold Semi Modular Power Supply" href="https://techdeals.in/corsair-tx650m-650w-80-plus-gold-semi-modular-power-supply/">
+                            <img decoding="async" width="300" height="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiIHdpZHRoPSIyMDQ4IiBoZWlnaHQ9IjIwNDgiIGRhdGEtdT0iaHR0cHMlM0ElMkYlMkZ0ZWNoZGVhbHMuaW4lMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjAlMkYwMiUyRlRYNjUwXzA0LTYwMHg2MDAtMS0yMDQ4eDIwNDguanBnIiBkYXRhLXc9IjIwNDgiIGRhdGEtaD0iMjA0OCIgZGF0YS1iaXA9IiI+PC9zdmc+" data-spai="1" class="" alt="Corsair TX650M 650W 80 Plus Gold Semi Modular Power Supply" srcset=" " sizes="(max-width: 300px) 100vw, 300px" title="Techdeals 20">      
+                       
+        </a>  
+         
+        <div class="gridcountdown"></div>        
+    </figure>
+    <div class="cat_for_grid lineheight15">
+                <a href="https://techdeals.in/600-650-watt/" class="woocat">600 / 650 Watt</a>                         
+    </div>
+     
+    <h3 class=" text-clamp text-clamp-2">
+                        <a href="https://techdeals.in/corsair-tx650m-650w-80-plus-gold-semi-modular-power-supply/">Corsair TX650M 650W 80 Plus Gold Semi Modular Power Supply</a>
+    </h3>
+             
+    <div class="rh_woo_star" title="Rated 9 out of 10"><span class="rhwoostar rhwoostar1 active">&#9733;</span><span class="rhwoostar rhwoostar2 active">&#9733;</span><span class="rhwoostar rhwoostar3 active">&#9733;</span><span class="rhwoostar rhwoostar4 active">&#9733;</span><span class="rhwoostar rhwoostar5 halfactive">&#9733;</span></div> 
+                                                                        <div class="font80 greycolor lineheight15">
+        <div class="mb10 compare-domain-icon"><span>Best deal at: </span><span class="compare-domain-text fontbold">mdcomputers.in</span></div>        </div>
+        
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"></div>
+    
+
+    <div class="border-top pt10 pr10 pl10 pb10 rh-flex-center-align abposbot">
+        <div class="price_for_grid redbrightcolor floatleft rehub-btn-font mr10">
+            
+	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8377;</span>7,600.00</bdi></span></span>
+        </div>
+        <div class="rh-flex-right-align btn_for_grid floatright">
+             
+                                    <a class="font90 greencolor" href="https://techdeals.in/corsair-tx650m-650w-80-plus-gold-semi-modular-power-supply/">+ 3 more</a>
+                               
+                                    
+                        
+        </div>            
+    </div>
+           
+</div>					
+					  
+													  		    <div class="product col_item woo_grid_compact two_column_mobile type-product ">
+    <div class="button_action rh-shadow-sceu pt5 pb5">
+        <div>
+                                    <div class="heart_thumb_wrap text-center"><span class="flowhidden cell_wishlist"><span class="heartplus" data-post_id="8931" data-informer="2"><span class="ml5 rtlmr5 wishaddedwrap" id="wishadded8931">Added to wishlist</span><span class="ml5 rtlmr5 wishremovedwrap" id="wishremoved8931">Removed from wishlist</span> </span></span><span id="wishcount8931" class="thumbscount">2</span> </div>  
+        </div>
+                                                                            
+    </div>   
+             
+    <figure class="mb15 mt25 position-relative">    
+        <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" title="Inno3d RTX 4060 Ti Twin X2 OC White 8GB Graphics Card" href="https://techdeals.in/inno3d-rtx-4060-ti-twin-x2-oc-white-8gb-graphics-card/">
+                            <img decoding="async" width="300" height="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiIHdpZHRoPSIyMDQ4IiBoZWlnaHQ9IjIwNDgiIGRhdGEtdT0iaHR0cHMlM0ElMkYlMkZ0ZWNoZGVhbHMuaW4lMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjMlMkYwOCUyRmlpbm8tMjA0OHgyMDQ4LmpwZyIgZGF0YS13PSIyMDQ4IiBkYXRhLWg9IjIwNDgiIGRhdGEtYmlwPSIiPjwvc3ZnPg==" data-spai="1" class="" alt="Specification : GPU Engine Specs: CUDA Cores 4352 Boost Clock (MHz) 2565 Base Clock(MHz) 2310 Thermal and Power Spec: Minimum System Power Requirement (W) 550 Supplementary Power Connectors 1x PCIe 8-pin cable Memory Specs: Memory Clock 18Gbps Standard Memory Config 8GB Memory Interface GDDR6 Memory Interface Width 128-bit Memory Bandwidth (GB/sec) 288 Feature Support: Real-Time Ray Tracing Yes Ray Tracing Cores 3rd Generation Tensor Cores 4th Generation NVIDIA Architecture Ada Lovelace Microsoft DirectX 12 Ultimate NVIDIA DLSS 3 PCI Express Gen 4 Yes NVIDIA GeForce Experience Yes NVIDIA Ansel Yes NVIDIA FreeStyle Yes Bus Support PCI-E 4.0 X8 NVIDIA ShadowPlay Yes OS Certification Windows 11 / 10, Linux, FreeBSDx86 NVIDIA Highlights Yes NVIDIA G-SYNC™-Ready Yes Game Ready Drivers Yes NVIDIA Studio Drivers Yes NVIDIA GPU Boost™ Yes Vulkan API Yes OpenGL 4.6 DisplayPort 1.4a Yes NVIDIA Encoder 1x 8th Generation NVIDIA Decoder 5th Generation HDMI 2.1a Yes Accessories: Installation Guide Yes Power Guide Yes Graphics Card Dimensions: Length 250mm Height 118mm Width 42mm Display Support: Multi Monitor Yes Maxmium Digital Resolution 7680×4320 HDCP 2.3 Inno3d RTX 4060 Ti Twin X2 OC White 8GB Graphics Card" srcset=" " sizes="(max-width: 300px) 100vw, 300px" title="Techdeals 21">      
+                       
+        </a>  
+         
+        <div class="gridcountdown"></div>        
+    </figure>
+    <div class="cat_for_grid lineheight15">
+                <a href="https://techdeals.in/geforce-rtx-40-series/" class="woocat">GeForce RTX 40 Series</a>                         
+    </div>
+     
+    <h3 class=" text-clamp text-clamp-2">
+                        <a href="https://techdeals.in/inno3d-rtx-4060-ti-twin-x2-oc-white-8gb-graphics-card/">Inno3d RTX 4060 Ti Twin X2 OC White 8GB Graphics Card</a>
+    </h3>
+             
+    <div class="rh_woo_star" title="Rated 9 out of 10"><span class="rhwoostar rhwoostar1 active">&#9733;</span><span class="rhwoostar rhwoostar2 active">&#9733;</span><span class="rhwoostar rhwoostar3 active">&#9733;</span><span class="rhwoostar rhwoostar4 active">&#9733;</span><span class="rhwoostar rhwoostar5 halfactive">&#9733;</span></div> 
+                                                                        <div class="font80 greycolor lineheight15">
+        <div class="mb10 compare-domain-icon"><span>Best deal at: </span><span class="compare-domain-text fontbold">vedantcomputers.com</span></div>        </div>
+        
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"></div>
+    
+
+    <div class="border-top pt10 pr10 pl10 pb10 rh-flex-center-align abposbot">
+        <div class="price_for_grid redbrightcolor floatleft rehub-btn-font mr10">
+            
+	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8377;</span>38,675.00</bdi></span></span>
+        </div>
+        <div class="rh-flex-right-align btn_for_grid floatright">
+             
+                                    <a class="font90 greencolor" href="https://techdeals.in/inno3d-rtx-4060-ti-twin-x2-oc-white-8gb-graphics-card/">+ 2 more</a>
+                               
+                                    
+                        
+        </div>            
+    </div>
+           
+</div>					
+					  
+													  		    <div class="product col_item woo_grid_compact two_column_mobile type-product ">
+    <div class="button_action rh-shadow-sceu pt5 pb5">
+        <div>
+                                    <div class="heart_thumb_wrap text-center"><span class="flowhidden cell_wishlist"><span class="heartplus" data-post_id="9056" data-informer="2"><span class="ml5 rtlmr5 wishaddedwrap" id="wishadded9056">Added to wishlist</span><span class="ml5 rtlmr5 wishremovedwrap" id="wishremoved9056">Removed from wishlist</span> </span></span><span id="wishcount9056" class="thumbscount">2</span> </div>  
+        </div>
+                                                                            
+    </div>   
+             
+    <figure class="mb15 mt25 position-relative">    
+        <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" title="Asus TUF Gaming RTX 4070 OC Edition 12GB Graphics Card" href="https://techdeals.in/asus-tuf-gaming-rtx-4070-oc-edition-12gb-graphics-card/">
+                            <img decoding="async" width="300" height="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiIHdpZHRoPSIyMDQ4IiBoZWlnaHQ9IjIwNDgiIGRhdGEtdT0iaHR0cHMlM0ElMkYlMkZ0ZWNoZGVhbHMuaW4lMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjMlMkYxMCUyRnR1Zi1ydHg0MDcwLW8xMmctMS0xMDAweDEwMDAtMS0yMDQ4eDIwNDguanBnIiBkYXRhLXc9IjIwNDgiIGRhdGEtaD0iMjA0OCIgZGF0YS1iaXA9IiI+PC9zdmc+" data-spai="1" class="" alt="Asus TUF Gaming RTX 4070 OC Edition 12GB Graphics Card" srcset=" " sizes="(max-width: 300px) 100vw, 300px" title="Techdeals 22">      
+                       
+        </a>  
+         
+        <div class="gridcountdown"></div>        
+    </figure>
+    <div class="cat_for_grid lineheight15">
+                <a href="https://techdeals.in/geforce-rtx-40-series/" class="woocat">GeForce RTX 40 Series</a>                         
+    </div>
+     
+    <h3 class=" text-clamp text-clamp-2">
+                        <a href="https://techdeals.in/asus-tuf-gaming-rtx-4070-oc-edition-12gb-graphics-card/">Asus TUF Gaming RTX 4070 OC Edition 12GB Graphics Card</a>
+    </h3>
+             
+    <div class="rh_woo_star" title="Rated 9 out of 10"><span class="rhwoostar rhwoostar1 active">&#9733;</span><span class="rhwoostar rhwoostar2 active">&#9733;</span><span class="rhwoostar rhwoostar3 active">&#9733;</span><span class="rhwoostar rhwoostar4 active">&#9733;</span><span class="rhwoostar rhwoostar5 halfactive">&#9733;</span></div> 
+                                                                        <div class="font80 greycolor lineheight15">
+        <div class="mb10 compare-domain-icon"><span>Best deal at: </span><span class="compare-domain-text fontbold">vedantcomputers.com</span></div>        </div>
+        
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"></div>
+    
+
+    <div class="border-top pt10 pr10 pl10 pb10 rh-flex-center-align abposbot">
+        <div class="price_for_grid redbrightcolor floatleft rehub-btn-font mr10">
+            
+	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8377;</span>65,989.00</bdi></span></span>
+        </div>
+        <div class="rh-flex-right-align btn_for_grid floatright">
+             
+                                    <a class="font90 greencolor" href="https://techdeals.in/asus-tuf-gaming-rtx-4070-oc-edition-12gb-graphics-card/">+ 2 more</a>
+</div>            
+    </div>
+           
+</div>					
+					  
+													  		    <div class="product col_item woo_grid_compact two_column_mobile type-product ">
+    <div class="button_action rh-shadow-sceu pt5 pb5">
+        <div>
+                                    <div class="heart_thumb_wrap text-center"><span class="flowhidden cell_wishlist"><span class="heartplus" data-post_id="9034" data-informer="2"><span class="ml5 rtlmr5 wishaddedwrap" id="wishadded9034">Added to wishlist</span><span class="ml5 rtlmr5 wishremovedwrap" id="wishremoved9034">Removed from wishlist</span> </span></span><span id="wishcount9034" class="thumbscount">2</span> </div>  
+        </div>
+                                                                            
+    </div>   
+             
+    <figure class="mb15 mt25 position-relative">    
+        <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" title="Zotac Gaming RTX 4060 Ti Twin Edge OC Spider Man 8GB Graphics Card" href="https://techdeals.in/zotac-gaming-rtx-4060-ti-twin-edge-oc-spider-man-8gb-graphics-card/">
+                            <img decoding="async" width="300" height="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiIHdpZHRoPSIyMDQ4IiBoZWlnaHQ9IjIwNDgiIGRhdGEtdT0iaHR0cHMlM0ElMkYlMkZ0ZWNoZGVhbHMuaW4lMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjMlMkYxMCUyRnp0LWQ0MDYxMGgtMTBzbXAtMS0xMDAweDEwMDAtMS0yMDQ4eDIwNDguanBnIiBkYXRhLXc9IjIwNDgiIGRhdGEtaD0iMjA0OCIgZGF0YS1iaXA9IiI+PC9zdmc+" data-spai="1" class="" alt="Zotac Gaming RTX 4060 Ti Twin Edge OC Spider Man 8GB Graphics Card" srcset=" " sizes="(max-width: 300px) 100vw, 300px" title="Techdeals 23">      
+                       
+        </a>  
+         
+        <div class="gridcountdown"></div>        
+    </figure>
+    <div class="cat_for_grid lineheight15">
+                <a href="https://techdeals.in/geforce-rtx-40-series/" class="woocat">GeForce RTX 40 Series</a>                         
+    </div>
+     
+    <h3 class=" text-clamp text-clamp-2">
+                        <a href="https://techdeals.in/zotac-gaming-rtx-4060-ti-twin-edge-oc-spider-man-8gb-graphics-card/">Zotac Gaming RTX 4060 Ti Twin Edge OC Spider Man 8GB Graphics Card</a>
+    </h3>
+             
+    <div class="rh_woo_star" title="Rated 9 out of 10"><span class="rhwoostar rhwoostar1 active">&#9733;</span><span class="rhwoostar rhwoostar2 active">&#9733;</span><span class="rhwoostar rhwoostar3 active">&#9733;</span><span class="rhwoostar rhwoostar4 active">&#9733;</span><span class="rhwoostar rhwoostar5 halfactive">&#9733;</span></div> 
+                                                                        <div class="font80 greycolor lineheight15">
+        <div class="mb10 compare-domain-icon"><span>Best deal at: </span><span class="compare-domain-text fontbold">mdcomputers.in</span></div>        </div>
+        
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"></div>
+    
+
+    <div class="border-top pt10 pr10 pl10 pb10 rh-flex-center-align abposbot">
+        <div class="price_for_grid redbrightcolor floatleft rehub-btn-font mr10">
+            
+	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8377;</span>38,100.00</bdi></span></span>
+        </div>
+        <div class="rh-flex-right-align btn_for_grid floatright">
+             
+                                    <a class="font90 greencolor" href="https://techdeals.in/zotac-gaming-rtx-4060-ti-twin-edge-oc-spider-man-8gb-graphics-card/">+ 3 more</a>
+                               
+                                    
+                        
+        </div>            
+    </div>
+           
+</div>					
+					  
+													  		    <div class="product col_item woo_grid_compact two_column_mobile type-product ">
+    <div class="button_action rh-shadow-sceu pt5 pb5">
+        <div>
+                                    <div class="heart_thumb_wrap text-center"><span class="flowhidden cell_wishlist"><span class="heartplus" data-post_id="1609" data-informer="1"><span class="ml5 rtlmr5 wishaddedwrap" id="wishadded1609">Added to wishlist</span><span class="ml5 rtlmr5 wishremovedwrap" id="wishremoved1609">Removed from wishlist</span> </span></span><span id="wishcount1609" class="thumbscount">1</span> </div>  
+        </div>
+                                                                            
+    </div>   
+                        <span class="onsale"><span>- 1%</span></span>         
+    <figure class="mb15 mt25 position-relative">    
+        <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" title="ASUS PRIME B360M D Intel Motherboard" href="https://techdeals.in/asus-prime-b360m-d/">
+                            <img decoding="async" width="300" height="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiIHdpZHRoPSIyMDQ4IiBoZWlnaHQ9IjIwNDgiIGRhdGEtdT0iaHR0cHMlM0ElMkYlMkZ0ZWNoZGVhbHMuaW4lMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMTklMkYxMiUyRmFzdXMtcHJpbWUtaC0zNzBtLXBsdXMtMi04MDB4ODAwLTEtMjA0OHgyMDQ4LmpwZyIgZGF0YS13PSIyMDQ4IiBkYXRhLWg9IjIwNDgiIGRhdGEtYmlwPSIiPjwvc3ZnPg==" data-spai="1" class="" alt="ASUS PRIME B360M D Intel Motherboard" srcset=" " sizes="(max-width: 300px) 100vw, 300px" title="Techdeals 24">      
+                       
+        </a>  
+         
+        <div class="gridcountdown"></div>        
+    </figure>
+    <div class="cat_for_grid lineheight15">
+                <a href="https://techdeals.in/intel-b360/" class="woocat">Intel B360</a>                         
+    </div>
+     
+    <h3 class=" text-clamp text-clamp-2">
+                        <a href="https://techdeals.in/asus-prime-b360m-d/">ASUS PRIME B360M D Intel Motherboard</a>
+    </h3>
+             
+    <div class="rh_woo_star" title="Rated 8.5 out of 10"><span class="rhwoostar rhwoostar1 active">&#9733;</span><span class="rhwoostar rhwoostar2 active">&#9733;</span><span class="rhwoostar rhwoostar3 active">&#9733;</span><span class="rhwoostar rhwoostar4 active">&#9733;</span><span class="rhwoostar rhwoostar5">&#9733;</span></div> 
+                                                                        <div class="font80 greycolor lineheight15">
+        <div class="mb10 compare-domain-icon"><span>Best deal at: </span><span class="compare-domain-text fontbold">amazon.in</span></div>        </div>
+        
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"></div>
+    
+
+    <div class="border-top pt10 pr10 pl10 pb10 rh-flex-center-align abposbot">
+        <div class="price_for_grid redbrightcolor floatleft rehub-btn-font mr10">
+            
+	<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8377;</span>7,990.00</bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8377;</span>7,899.00</bdi></span></ins></span>
+        </div>
+        <div class="rh-flex-right-align btn_for_grid floatright">
+             
+                                    <a class="font90 greencolor" href="https://techdeals.in/asus-prime-b360m-d/">+ 1 more</a>
+                               
+                                    
+                        
+        </div>            
+    </div>
+           
+</div>					
+					  
+													  		    <div class="product col_item woo_grid_compact two_column_mobile type-product ">
+    <div class="button_action rh-shadow-sceu pt5 pb5">
+        <div>
+                                    <div class="heart_thumb_wrap text-center"><span class="flowhidden cell_wishlist"><span class="heartplus" data-post_id="1395" data-informer="0"><span class="ml5 rtlmr5 wishaddedwrap" id="wishadded1395">Added to wishlist</span><span class="ml5 rtlmr5 wishremovedwrap" id="wishremoved1395">Removed from wishlist</span> </span></span><span id="wishcount1395" class="thumbscount">0</span> </div>  
+        </div>
+                                                                            
+    </div>   
+             
+    <figure class="mb15 mt25 position-relative">    
+        <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" title="AMD Ryzen 5 2600X 6-Core 3.6 GHz (4.2 GHz Max Boost) Socket AM4 Processor" href="https://techdeals.in/amd-ryzen-5-2600x/">
+                            <img decoding="async" width="300" height="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzAwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZGF0YS11PSJodHRwcyUzQSUyRiUyRnRlY2hkZWFscy5pbiUyRndwLWNvbnRlbnQlMkZ1cGxvYWRzJTJGMjAxOSUyRjExJTJGNjFxSkhFMU81a0wuX1NMMTUwMF8tMS0zMDB4MzAwLnBuZyIgZGF0YS13PSIzMDAiIGRhdGEtaD0iMzAwIiBkYXRhLWJpcD0iIj48L3N2Zz4=" data-spai="1" class="" alt="Amd Ryzen 5 2600" srcset=" " sizes="(max-width: 300px) 100vw, 300px" title="Techdeals 25">      
+                       
+        </a>  
+         
+        <div class="gridcountdown"></div>        
+    </figure>
+    <div class="cat_for_grid lineheight15">
+                <a href="https://techdeals.in/amd/" class="woocat">AMD</a>                         
+    </div>
+     
+    <h3 class=" text-clamp text-clamp-2">
+                        <a href="https://techdeals.in/amd-ryzen-5-2600x/">AMD Ryzen 5 2600X 6-Core 3.6 GHz (4.2 GHz Max Boost) Socket AM4 Processor</a>
+    </h3>
+             
+    <div class="rh_woo_star" title="Rated 9 out of 10"><span class="rhwoostar rhwoostar1 active">&#9733;</span><span class="rhwoostar rhwoostar2 active">&#9733;</span><span class="rhwoostar rhwoostar3 active">&#9733;</span><span class="rhwoostar rhwoostar4 active">&#9733;</span><span class="rhwoostar rhwoostar5 halfactive">&#9733;</span></div> 
+                                                                        <div class="font80 greycolor lineheight15">
+        <div class="mb10 compare-domain-icon"><span>Best deal at: </span><span class="compare-domain-text fontbold">amazon.in</span></div>        </div>
+        
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"></div>
+    
+
+    <div class="border-top pt10 pr10 pl10 pb10 rh-flex-center-align abposbot">
+        <div class="price_for_grid redbrightcolor floatleft rehub-btn-font mr10">
+            
+	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8377;</span>13,999.00</bdi></span></span>
+        </div>
+        <div class="rh-flex-right-align btn_for_grid floatright">
+             
+                                    <a class="font90 greencolor" href="https://techdeals.in/amd-ryzen-5-2600x/">+ 2 more</a>
+                               
+                                    
+                        
+        </div>            
+    </div>
+           
+</div>					
+					  
+													  		    <div class="product col_item woo_grid_compact two_column_mobile type-product ">
+    <div class="button_action rh-shadow-sceu pt5 pb5">
+        <div>
+                                    <div class="heart_thumb_wrap text-center"><span class="flowhidden cell_wishlist"><span class="heartplus" data-post_id="3190" data-informer="0"><span class="ml5 rtlmr5 wishaddedwrap" id="wishadded3190">Added to wishlist</span><span class="ml5 rtlmr5 wishremovedwrap" id="wishremoved3190">Removed from wishlist</span> </span></span><span id="wishcount3190" class="thumbscount">0</span> </div>  
+        </div>
+                                                                            
+    </div>   
+             
+    <figure class="mb15 mt25 position-relative">    
+        <a class="img-centered-flex rh-flex-justify-center rh-flex-center-align" title="Antec DF500 RGB Cabinet" href="https://techdeals.in/antec-df500-rgb-cabinet/">
+                            <img decoding="async" width="300" height="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiIHdpZHRoPSIyMDQ4IiBoZWlnaHQ9IjIwNDgiIGRhdGEtdT0iaHR0cHMlM0ElMkYlMkZ0ZWNoZGVhbHMuaW4lMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjAlMkYwMiUyRmFudGVjLWRmNTAwLXJnYi1jYWJpbmV0LTIwNDh4MjA0OC5qcGciIGRhdGEtdz0iMjA0OCIgZGF0YS1oPSIyMDQ4IiBkYXRhLWJpcD0iIj48L3N2Zz4=" data-spai="1" class="" alt="Antec DF500 RGB Cabinet" srcset=" " sizes="(max-width: 300px) 100vw, 300px" title="Techdeals 26">      
+                       
+        </a>  
+         
+        <div class="gridcountdown"></div>        
+    </figure>
+    <div class="cat_for_grid lineheight15">
+                <a href="https://techdeals.in/cabinet-case/" class="woocat">Cabinet (Case)</a>                         
+    </div>
+     
+    <h3 class=" text-clamp text-clamp-2">
+                        <a href="https://techdeals.in/antec-df500-rgb-cabinet/">Antec DF500 RGB Cabinet</a>
+    </h3>
+             
+    <div class="rh_woo_star" title="Rated 8.5 out of 10"><span class="rhwoostar rhwoostar1 active">&#9733;</span><span class="rhwoostar rhwoostar2 active">&#9733;</span><span class="rhwoostar rhwoostar3 active">&#9733;</span><span class="rhwoostar rhwoostar4 active">&#9733;</span><span class="rhwoostar rhwoostar5">&#9733;</span></div> 
+                                                                        <div class="font80 greycolor lineheight15">
+        <div class="mb10 compare-domain-icon"><span>Best deal at: </span><span class="compare-domain-text fontbold">mdcomputers.in</span></div>        </div>
+        
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"></div>
+    
+
+    <div class="border-top pt10 pr10 pl10 pb10 rh-flex-center-align abposbot">
+        <div class="price_for_grid redbrightcolor floatleft rehub-btn-font mr10">
+            
+	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8377;</span>4,546.00</bdi></span></span>
+        </div>
+        <div class="rh-flex-right-align btn_for_grid floatright">
+             
+                                    <a class="font90 greencolor" href="https://techdeals.in/antec-df500-rgb-cabinet/">+ 3 more</a>
+                               
+                                    
+                        
+        </div>            
+    </div>
+           
+</div>
